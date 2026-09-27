@@ -1,416 +1,237 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="威尔士旅行实用指南 · 历史与传统板块。">
-    <title>威尔士 · 岁月回响 — 历史与传统 | Visit Wales 中文版</title>
-
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%238B2331'/%3E%3C/svg%3E">
-
-    <link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
-    <link href="https://miaoda.feishu.cn/fonts/css2?family=Cinzel:wght@400;500&family=Noto+Serif+SC:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-pure: #FFFFFF;
-            --bg-offwhite: #F9F9F7;
-            --text-dark: #1A1A1A;
-            --text-gray: #555555;
-            --text-light: #999999;
-            --accent-red: #8B2331;
-            --line-color: #E5E5E5;
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: 'Open Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg-pure);
-            color: var(--text-dark);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        .font-serif     { font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif; }
-        .font-eng-serif { font-family: 'Cinzel', 'Times New Roman', serif; }
-
-        .progress-bar {
-            position: fixed; top: 0; left: 0;
-            height: 3px; width: 0%;
-            background: var(--accent-red);
-            z-index: 100;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 560px;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-        .hero-bg {
-            position: absolute; inset: 0;
-            background: url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Apm7bbkyIoM6PzxYfXKcjRQfnfe') center/cover no-repeat;
-            animation: heroKenburns 20s ease-in-out infinite alternate;
-            z-index: 0;
-        }
-        @keyframes heroKenburns {
-            0%   { transform: scale(1.08) translate(0, 0); }
-            100% { transform: scale(1.18) translate(-2%, -1.5%); }
-        }
-        .hero::after {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.45) 100%);
-            z-index: 1;
-        }
-        .hero-inner {
-            position: relative; z-index: 2;
-            padding: 0 24px;
-            max-width: 900px;
-        }
-        .hero .en-title {
-            font-size: 0.95rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-            opacity: 0;
-            animation: fadeUp 1.2s ease 0.3s forwards;
-        }
-        .hero h1 {
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            font-weight: 400;
-            letter-spacing: 0.18em;
-            margin: 0 0 18px;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-            opacity: 0;
-            animation: fadeUp 1.4s ease 0.6s forwards;
-        }
-        .hero .hero-line {
-            width: 1px; height: 0;
-            background: #fff;
-            margin: 26px auto;
-            animation: growLine 1.4s ease 1s forwards;
-        }
-        .hero .hero-sub {
-            font-size: 0.98rem;
-            line-height: 2.1;
-            font-weight: 300;
-            letter-spacing: 0.08em;
-            opacity: 0;
-            animation: fadeUp 1.4s ease 1.2s forwards;
-        }
-        .hero .scroll-hint {
-            position: absolute;
-            bottom: 34px; left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            opacity: 0.8;
-            animation: bounceHint 2.2s ease-in-out infinite;
-        }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(24px); } }
-        @keyframes growLine { to { height: 60px; } }
-        @keyframes bounceHint { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,10px); } }
-
-        .section-intro {
-            text-align: center;
-            padding: 90px 20px 60px;
-            background: var(--bg-offwhite);
-            border-bottom: 1px solid var(--line-color);
-        }
-        .section-intro .en-title {
-            font-size: 0.85rem;
-            color: var(--accent-red);
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-        .section-intro .zh-title {
-            font-size: 1.9rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            margin: 0;
-        }
-        .section-intro .divider {
-            width: 1px; height: 40px;
-            background: var(--accent-red);
-            margin: 24px auto;
-        }
-
-        .exhibition-item {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            border-bottom: 1px solid var(--line-color);
-        }
-        .item-image-wrapper {
-            flex: 1 1 50%;
-            min-width: 320px;
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-offwhite);
-        }
-        .item-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            min-height: 48vh;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.8s cubic-bezier(0.22,0.61,0.36,1);
-        }
-        .item-image-wrapper:hover img { transform: scale(1.1); }
-
-        .item-text-wrapper {
-            flex: 1 1 50%;
-            min-width: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 7% 9%;
-        }
-        .item-text-content { max-width: 520px; }
-
-        .item-index {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            letter-spacing: 0.15em;
-            margin-bottom: 22px;
-            display: block;
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 10px;
-            width: max-content;
-        }
-        .item-title {
-            font-size: 1.9rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 0 0 24px;
-        }
-        .item-title span {
-            display: block;
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            margin-top: 8px;
-            letter-spacing: 0.06em;
-            font-weight: 300;
-        }
-        .item-desc {
-            font-size: 0.96rem;
-            line-height: 2.2;
-            color: var(--text-gray);
-            text-align: justify;
-            text-justify: inter-ideograph;
-            font-weight: 300;
-            margin: 0;
-        }
-
-        .exhibition-item .reveal-img {
-            opacity: 0; transform: translateX(-50px);
-            transition: opacity 1s ease, transform 1s cubic-bezier(0.22,0.61,0.36,1);
-        }
-        .exhibition-item .reveal-text > * {
-            opacity: 0; transform: translateY(26px);
-            transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22,0.61,0.36,1);
-        }
-        .exhibition-item .reveal-text > *:nth-child(1) { transition-delay: 0.15s; }
-        .exhibition-item .reveal-text > *:nth-child(2) { transition-delay: 0.30s; }
-        .exhibition-item .reveal-text > *:nth-child(3) { transition-delay: 0.45s; }
-        .exhibition-item.in-view .reveal-img { opacity: 1; transform: none; }
-        .exhibition-item.in-view .reveal-text > * { opacity: 1; transform: none; }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .hero-bg { animation: none !important; }
-            .hero .en-title, .hero h1, .hero .hero-sub { opacity: 1 !important; animation: none !important; }
-            .hero .hero-line { height: 60px !important; }
-            .reveal-img, .exhibition-item .reveal-text > * { opacity: 1 !important; transform: none !important; transition: none !important; }
-            .item-image-wrapper img { transition: none !important; }
-        }
-
-        .to-top {
-            position: fixed; right: 26px; bottom: 26px;
-            width: 46px; height: 46px;
-            border: 1px solid var(--line-color);
-            background: #fff; color: var(--accent-red);
-            font-size: 16px; cursor: pointer;
-            opacity: 0; pointer-events: none; transform: translateY(10px);
-            transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease;
-            z-index: 50;
-        }
-        .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
-        .to-top:hover { border-color: var(--accent-red); }
-
-        @media (max-width: 900px) {
-            .item-image-wrapper, .item-text-wrapper { flex: 1 1 100%; }
-            .item-image-wrapper img { min-height: 36vh; }
-            .item-text-wrapper { padding: 12% 9%; }
-        }
-
-        @media print {
-            .progress-bar, .to-top, .scroll-hint { display: none; }
-            .hero { height: auto; min-height: 0; padding: 60px 0; color: var(--text-dark); }
-            .hero-bg { animation: none; position: relative; height: 300px; }
-            .hero::after { display: none; }
-            .hero h1 { text-shadow: none; }
-            .item-image-wrapper img { transition: none; }
-            .reveal-img, .exhibition-item .reveal-text > * { opacity: 1 !important; transform: none !important; }
-            .exhibition-item { break-inside: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>威尔士 · 历史与传统 | Visit Wales 中文版</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231F3D2B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Cinzel:wght@400;500&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#1F3D2B;
+  --green-800:#2A4D38;
+  --green-700:#356044;
+  --cream:#F5F1E8;
+  --cream-2:#EDE7D6;
+  --sage:#E8EDE6;
+  --gold:#C89B3C;
+  --gold-dark:#A87E2E;
+  --ink:#22301F;
+  --gray:#5A6658;
+  --line:#D8D2C0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.font-serif{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif}
+.font-eng{font-family:'Cinzel','Times New Roman',serif}
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,241,232,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:18px 40px;}
+.nav-logo{font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.25em;color:var(--green-900);font-weight:600;}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.92rem;color:var(--green-900);text-decoration:none;letter-spacing:.05em;padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .25s,color .25s;}
+.nav-links a:hover{border-bottom-color:var(--gold);color:var(--gold-dark)}
+.nav-links a.active{border-bottom-color:var(--green-900)}
+.hero{position:relative;height:88vh;min-height:520px;display:flex;align-items:center;overflow:hidden;color:#fff;}
+.hero-bg{position:absolute;inset:0;background:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Apm7bbkyIoM6PzxYfXKcjRQfnfe') center/cover no-repeat;animation:kenburns 22s ease-in-out infinite alternate;}
+@keyframes kenburns{0%{transform:scale(1.05)}100%{transform:scale(1.18) translate(-2%,-1.5%)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,40,28,.75) 0%,rgba(20,40,28,.35) 55%,rgba(20,40,28,.15) 100%);}
+.hero-inner{position:relative;z-index:2;padding:0 8%;max-width:780px}
+.hero .en{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.45em;color:var(--gold);margin-bottom:22px;opacity:0;animation:fadeUp 1.1s ease .3s forwards;}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.2;letter-spacing:.04em;margin-bottom:20px;text-shadow:0 3px 24px rgba(0,0,0,.35);opacity:0;animation:fadeUp 1.2s ease .55s forwards;}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{font-size:1.02rem;line-height:2;font-weight:300;color:rgba(255,255,255,.92);margin-bottom:34px;opacity:0;animation:fadeUp 1.2s ease .85s forwards;}
+.btn-gold{display:inline-block;background:var(--gold);color:#fff;padding:14px 34px;border-radius:30px;font-size:.95rem;letter-spacing:.12em;text-decoration:none;transition:background .3s,transform .3s,box-shadow .3s;box-shadow:0 6px 20px rgba(200,155,60,.35);opacity:0;animation:fadeUp 1.2s ease 1.1s forwards;}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 10px 26px rgba(200,155,60,.45)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.section{padding:90px 8%;max-width:1280px;margin:0 auto}
+.section-head{margin-bottom:50px}
+.section-head .en{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.35em;color:var(--gold-dark);text-transform:uppercase;margin-bottom:14px;}
+.section-head h2{font-family:'Noto Serif SC',serif;font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:900;color:var(--green-900);line-height:1.3;margin-bottom:16px;}
+.section-head p{font-size:1rem;line-height:1.9;color:var(--gray);max-width:720px;font-weight:300;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:40px 0 60px;}
+.stat{padding:28px 30px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .num{font-family:'Noto Serif SC',serif;font-size:2.2rem;font-weight:900;color:var(--green-900);line-height:1;margin-bottom:10px;}
+.stat .lbl{font-size:.9rem;color:var(--gray);font-weight:300}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+.card{background:var(--green-900);border-radius:16px;overflow:hidden;color:#fff;transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,61,43,.28)}
+.card-img{height:220px;overflow:hidden;position:relative;}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.22,.61,.36,1);}
+.card:hover .card-img img{transform:scale(1.08)}
+.card-body{padding:26px 28px 24px}
+.card-body .kicker{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.25em;color:var(--gold);margin-bottom:10px;}
+.card-body h3{font-family:'Noto Serif SC',serif;font-size:1.35rem;font-weight:700;margin-bottom:12px;line-height:1.4;color:#fff;}
+.card-body p{font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.78);font-weight:300;margin-bottom:18px;}
+.card-links{display:flex;gap:18px;align-items:center}
+.card-links a{font-size:.85rem;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .25s;}
+.card-links a:hover{border-bottom-color:var(--gold)}
+.card-links a.more::after{content:' →'}
+.sage-band{background:var(--sage);padding:90px 8%;margin-top:40px;}
+.sage-inner{max-width:1280px;margin:0 auto}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px;}
+.story:nth-child(even) .story-img{order:2}
+.story-img{border-radius:16px;overflow:hidden;height:340px}
+.story-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s ease;}
+.story-img:hover img{transform:scale(1.06)}
+.story-text h3{font-family:'Noto Serif SC',serif;font-size:1.7rem;font-weight:900;color:var(--green-900);margin-bottom:18px;line-height:1.35;}
+.story-text p{font-size:.96rem;line-height:2;color:var(--gray);font-weight:300;margin-bottom:14px;}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pill{font-size:.82rem;padding:7px 16px;border-radius:20px;background:#fff;border:1px solid var(--line);color:var(--green-900);}
+.cta{background:var(--green-900);color:#fff;padding:80px 8%;text-align:center;}
+.cta h2{font-family:'Noto Serif SC',serif;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:900;color:var(--gold);margin-bottom:16px;}
+.cta p{color:rgba(255,255,255,.75);font-weight:300;max-width:640px;margin:0 auto 30px;line-height:1.9}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal.in-view{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-40px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal-r{opacity:0;transform:translateX(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.in-view.reveal-l,.in-view.reveal-r{opacity:1;transform:none}
+.to-top{position:fixed;right:26px;bottom:26px;width:46px;height:46px;border-radius:50%;background:var(--green-900);color:var(--gold);border:none;font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.35s;z-index:99;}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+@media (max-width:900px){
+.nav{padding:14px 20px}
+.nav-links{gap:18px;font-size:.8rem}
+.nav-links a:not(.active){display:none}
+.stats{grid-template-columns:1fr}
+.stat{border-right:none;border-bottom:1px solid var(--line)}
+.stat:last-child{border-bottom:none}
+.card-grid{grid-template-columns:1fr}
+.story{grid-template-columns:1fr;gap:28px}
+.story:nth-child(even) .story-img{order:0}
+.section{padding:60px 6%}
+.sage-band{padding:60px 6%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.reveal-l,.reveal-r{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-
-    <div class="progress-bar" id="progressBar"></div>
-
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-inner">
-            <div class="en-title font-eng-serif">History &amp; Traditions</div>
-            <h1 class="font-serif">岁月回响</h1>
-            <div class="hero-line"></div>
-            <p class="hero-sub font-serif">威尔士 · 历史与传统<br>五段篇章，读懂这片凯尔特土地</p>
+<nav class="nav">
+  <div class="nav-logo font-eng">CYMRU · WALES</div>
+  <div class="nav-links">
+    <a href="#overview">概况</a>
+    <a href="#history" class="active">文化</a>
+    <a href="#arrival">抵达与气候</a>
+    <a href="#safety">安全提示</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="en font-eng">History &amp; Traditions</div>
+    <h1 class="font-serif">岁月回响<br><em>威尔士的历史与传统</em></h1>
+    <p>在山脉、城堡与海岸线之间，读懂这个凯尔特国度两千年的故事。<br>五段篇章，从语言、博物馆、寻根、节日到羊毛，走进威尔士的文化肌理。</p>
+    <a href="#history" class="btn-gold">开始探索</a>
+  </div>
+</section>
+<section class="section" id="history">
+  <div class="section-head reveal">
+    <div class="en font-eng">Wales at a Glance · Heritage</div>
+    <h2 class="font-serif">山海之外，也有绵长的故事</h2>
+    <p>Cymru 是威尔士语的本土名称。这里有起伏的群山、蜿蜒海岸与古老城堡；威尔士语与英语共同构成日常风景，也塑造了它独特的文化身份。</p>
+  </div>
+  <div class="stats reveal">
+    <div class="stat"><div class="num">600+</div><div class="lbl">座城堡遗址与古堡</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">常用语言：威尔士语与英语</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">世界遗产地</div></div>
+  </div>
+  <div class="card-grid">
+    <article class="card reveal-l">
+      <div class="card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Evp0bUcexoE5y1xUR3bcUPx3nsd" alt="威尔士双语路牌"></div>
+      <div class="card-body">
+        <div class="kicker font-eng">01 · LANGUAGE</div>
+        <h3 class="font-serif">威尔士语：生生不息的凯尔特回音</h3>
+        <p>欧洲现存最古老的语言之一，时至今日仍有数十万人日常使用。街头巷尾的双语标识与酒馆里的民谣歌声，让它成为融入现代生活的鲜活灵魂。</p>
+        <div class="card-links"><a class="more" href="https://www.visitwales.com/things-to-do/attractions" target="_blank" rel="noopener">查看官方指南</a></div>
+      </div>
+    </article>
+    <article class="card reveal-r">
+      <div class="card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RUgkbYymeobkYpxukdWcNDy1nXg" alt="Conwy 中世纪城堡"></div>
+      <div class="card-body">
+        <div class="kicker font-eng">02 · MUSEUMS &amp; CASTLES</div>
+        <h3 class="font-serif">九十余座时光殿堂</h3>
+        <p>从列入世界遗产的 Conwy 城堡，到星罗棋布的博物馆，威尔士把两千年历史静静陈列：爱德华一世的石砌城垣、工业革命的钢铁记忆，与古典美术的璀璨遗存。</p>
+        <div class="card-links"><a class="more" href="https://www.visitwales.com/things-to-do/attractions/museums-galleries" target="_blank" rel="noopener">查看博物馆指南</a></div>
+      </div>
+    </article>
+    <article class="card reveal-l">
+      <div class="card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BLveb9O50oxBrFxVNfGcTCN1nVh" alt="斯诺登尼亚石砌古村"></div>
+      <div class="card-body">
+        <div class="kicker font-eng">03 · GENEALOGY</div>
+        <h3 class="font-serif">寻根之旅：血脉的威尔士印记</h3>
+        <p>数以百万计的威尔士后裔散落全球。借助教区档案与家谱导览，探访祖辈耕耘与祈祷的古老村落，重新连接那份跨越重洋的家族羁绊。</p>
+        <div class="card-links"><a class="more" href="https://www.visitwales.com/things-to-do/history-heritage/genealogy" target="_blank" rel="noopener">寻根导览</a></div>
+      </div>
+    </article>
+    <article class="card reveal-r">
+      <div class="card-img"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/HI5ebwBvHobo3hxZrEncxzQAnie" alt="威尔士红龙旗"></div>
+      <div class="card-body">
+        <div class="kicker font-eng">04 · ST DAVID'S DAY</div>
+        <h3 class="font-serif">圣大卫日：水仙与红龙的春之颂</h3>
+        <p>每年三月一日，举国纪念主保圣人圣大卫。人们襟配国花水仙与韭葱，身着民族服饰走上街头；红龙旗帜下，是一场又一场欢歌的盛大游行。</p>
+        <div class="card-links"><a class="more" href="https://www.visitwales.com/things-to-do/events/festivals/collections/st-davids-day" target="_blank" rel="noopener">节日活动</a></div>
+      </div>
+    </article>
+    <article class="card reveal-l" style="grid-column:1/-1">
+      <div class="card-img" style="height:260px"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FGDpby72xofWULx8IuIcB1l4nHd" alt="威尔士提花羊毛毯"></div>
+      <div class="card-body">
+        <div class="kicker font-eng">05 · TEXTILES</div>
+        <h3 class="font-serif">羊毛史诗：织机上的岁月经纬</h3>
+        <p>循着纺线轨迹，探寻威尔士羊毛工业的百年兴衰。从深谷中水力驱动的斑驳磨坊，到世代相传的提花编织技艺，这份匠心在独立工坊中延续，从古老磨坊到现代羊驼徒步，梭声起落间织就新的生命力。</p>
+        <div class="card-links"><a class="more" href="https://www.visitwales.com/things-to-do/history-heritage/heritage-sites" target="_blank" rel="noopener">遗产与工艺</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="sage-band">
+  <div class="sage-inner">
+    <div class="section-head reveal">
+      <div class="en font-eng">A Nation of Song</div>
+      <h2 class="font-serif">歌声、语言与归属感</h2>
+      <p>威尔士素有"歌声之国"的美誉。每年三月一日的圣大卫日、国家艺术节 Eisteddfod，是威尔士人凝聚认同的时刻——这方土地的热情与骄傲，扎根在每个人的日常里。</p>
+    </div>
+    <div class="story">
+      <div class="story-img reveal-l"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RUgkbYymeobkYpxukdWcNDy1nXg" alt="康威城堡"></div>
+      <div class="story-text reveal-r">
+        <h3 class="font-serif">从史前聚落到爱德华一世的铁城</h3>
+        <p>公元前 250,000 年，最早的人类已在这片土地留下踪迹。1216—1536 年，威尔士公国存续；1536 年《威尔士法案》促成两地法律合并，威尔士语与诗歌传统却延续至今。</p>
+        <p>Conwy、Caernarfon、Harlech 与 Beaumaris 四座城堡，是爱德华一世于 13 世纪修建的"铁环"，如今同列为世界遗产，也成为威尔士最上镜的文化地标。</p>
+        <div class="pills">
+          <span class="pill">威尔士语 Cymraeg</span>
+          <span class="pill">Eisteddfod 艺术节</span>
+          <span class="pill">圣大卫日 · 3月1日</span>
+          <span class="pill">世界遗产城堡群</span>
         </div>
-        <div class="scroll-hint font-eng-serif">SCROLL ↓</div>
-    </section>
-
-    <section class="culture-exhibition">
-
-        <div class="section-intro">
-            <div class="en-title font-eng-serif">Five Chapters</div>
-            <h2 class="zh-title font-serif">历史长河中的五段记忆</h2>
-            <div class="divider"></div>
-        </div>
-
-        <article class="exhibition-item">
-            <div class="item-image-wrapper reveal-img">
-                <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Evp0bUcexoE5y1xUR3bcUPx3nsd"
-                     alt="雪后威尔士绿底双语路牌，英文与威尔士文地名并列" width="800" height="533">
-            </div>
-            <div class="item-text-wrapper">
-                <div class="item-text-content reveal-text">
-                    <span class="item-index font-eng-serif">01 / LANGUAGE</span>
-                    <h3 class="item-title font-serif">
-                        威尔士语：生生不息的凯尔特回音
-                        <span class="font-eng-serif">Welsh: The Living Language</span>
-                    </h3>
-                    <p class="item-desc">
-                        作为欧洲现存最古老的语言之一，威尔士语（Cymraeg）深深植根于凯尔特文明的脉络之中。时至今日，仍有数十万威尔士人将其作为日常交流的语言。从街头巷尾的双语标识，到酒馆里悠扬的民谣歌声——威尔士语并非陈列在玻璃柜中的文物，而是融入现代生活每一寸肌理的鲜活灵魂。
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <article class="exhibition-item">
-            <div class="item-image-wrapper reveal-img">
-                <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RUgkbYymeobkYpxukdWcNDy1nXg"
-                     alt="横跨康威河口的 Conwy 中世纪城堡，联合国教科文组织世界遗产" width="1920" height="1080">
-            </div>
-            <div class="item-text-wrapper">
-                <div class="item-text-content reveal-text">
-                    <span class="item-index font-eng-serif">02 / MUSEUMS</span>
-                    <h3 class="item-title font-serif">
-                        九十余座时光殿堂
-                        <span class="font-eng-serif">Mad for Museums in Wales</span>
-                    </h3>
-                    <p class="item-desc">
-                        从康威城堡这样列入世界遗产的中世纪要塞，到星罗棋布的九十余座博物馆，威尔士把两千年的历史静静陈列在你眼前。馆藏包罗万象：既有爱德华一世时代的石砌城垣，也有工业革命时期震耳欲聋的钢铁记忆，更有纺织工艺与古典美术长廊里的璀璨遗存。
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <article class="exhibition-item">
-            <div class="item-image-wrapper reveal-img">
-                <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BLveb9O50oxBrFxVNfGcTCN1nVh"
-                     alt="斯诺登尼亚山边的威尔士石砌小屋，红门石板花径远眺山湖" width="525" height="350">
-            </div>
-            <div class="item-text-wrapper">
-                <div class="item-text-content reveal-text">
-                    <span class="item-index font-eng-serif">03 / GENEALOGY</span>
-                    <h3 class="item-title font-serif">
-                        寻根之旅：血脉的威尔士印记
-                        <span class="font-eng-serif">Find Your Roots &amp; Family Tree</span>
-                    </h3>
-                    <p class="item-desc">
-                        数以百万计的威尔士后裔如星辰般散落全球。拨开历史的尘埃，借助浩瀚的教区档案文献与专业的家谱寻根导览，你可以踏上一段向史而行的温情之旅——亲身探访祖辈曾经耕耘与祈祷的古老村落，在错综复杂的族谱中，重新连接那份跨越重洋的家族羁绊。
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <article class="exhibition-item">
-            <div class="item-image-wrapper reveal-img">
-                <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/HI5ebwBvHobo3hxZrEncxzQAnie"
-                     alt="威尔士红龙国旗 Y Ddraig Goch，红绿白三色旗上的红色飞龙" width="1800" height="1115">
-            </div>
-            <div class="item-text-wrapper">
-                <div class="item-text-content reveal-text">
-                    <span class="item-index font-eng-serif">04 / ST DAVID'S DAY</span>
-                    <h3 class="item-title font-serif">
-                        圣大卫日：水仙与红龙的春之颂
-                        <span class="font-eng-serif">Celebrate St David's Day</span>
-                    </h3>
-                    <p class="item-desc">
-                        每年三月一日，春意初绽，举国上下便迎来纪念威尔士主保圣人的节日——圣大卫日。这一天，人们襟配国花水仙与传统的韭葱，身着斑斓的民族服饰走上街头；高高飘扬的红龙旗帜下，是一场又一场充满欢歌的盛大游行，彰显着这片土地永不褪色的民族自豪。
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <article class="exhibition-item">
-            <div class="item-image-wrapper reveal-img">
-                <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FGDpby72xofWULx8IuIcB1l4nHd"
-                     alt="红色威尔士传统提花羊毛毯的几何纹样" width="1445" height="1444">
-            </div>
-            <div class="item-text-wrapper">
-                <div class="item-text-content reveal-text">
-                    <span class="item-index font-eng-serif">05 / TEXTILES</span>
-                    <h3 class="item-title font-serif">
-                        羊毛史诗：织机上的岁月经纬
-                        <span class="font-eng-serif">Unravelling the History of Wool</span>
-                    </h3>
-                    <p class="item-desc">
-                        循着纺线的轨迹，探寻威尔士羊毛工业的百年兴衰。从深谷中水力驱动的斑驳磨坊，到世代相传的古老编织技艺，威尔士羊毛曾以其卓越质地温暖了远方的国度。如今，这份匠心在独立工坊中延续——从古老磨坊到现代羊驼徒步体验，梭声起落间，织就出崭新的艺术生命力。
-                    </p>
-                </div>
-            </div>
-        </article>
-
-    </section>
-
-    <button class="to-top" id="toTop" aria-label="返回顶部" title="返回顶部">↑</button>
-
-    <script>
-        var items = document.querySelectorAll('.exhibition-item');
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (e) {
-                    if (e.isIntersecting) { e.target.classList.add('in-view'); }
-                    else { e.target.classList.remove('in-view'); }
-                });
-            }, { threshold: 0.15 });
-            items.forEach(function (el) { io.observe(el); });
-        } else {
-            items.forEach(function (el) { el.classList.add('in-view'); });
-        }
-
-        var bar = document.getElementById('progressBar');
-        var btn = document.getElementById('toTop');
-        window.addEventListener('scroll', function () {
-            var h = document.documentElement;
-            var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-            bar.style.width = pct + '%';
-            if (h.scrollTop > 500) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
-        }, { passive: true });
-        btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-    </script>
-
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <h2 class="font-serif">继续探索威尔士</h2>
+  <p>本页为 Visit Wales（英国威尔士旅游局官网）历史与传统板块的中文本地化版本。更多交通、天气、安全与海岸信息，请前往官方网站获取。</p>
+  <a class="btn-gold" href="https://www.visitwales.com/info" target="_blank" rel="noopener">前往 Visit Wales 原文 ↗</a>
+</section>
+<button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
+<script>
+var items=document.querySelectorAll('.reveal,.reveal-l,.reveal-r');
+if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting)e.target.classList.add('in-view');
+      else e.target.classList.remove('in-view');
+    });
+  },{threshold:.15});
+  items.forEach(function(el){io.observe(el)});
+}else{items.forEach(function(el){el.classList.add('in-view')});}
+var btn=document.getElementById('toTop');
+addEventListener('scroll',function(){if(scrollY>500)btn.classList.add('show');else btn.classList.remove('show');},{passive:true});
+btn.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+</script>
 </body>
 </html>
