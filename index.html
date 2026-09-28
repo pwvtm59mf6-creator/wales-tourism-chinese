@@ -3,408 +3,957 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>威尔士 · 历史与传统 | Visit Wales 中文版</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231F3D2B'/%3E%3C/svg%3E">
+<title>威尔士 Cymru · 官方旅游指南</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316351F'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C9A961'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
-<link href="https://miaoda.feishu.cn/fonts/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--green:#1F3D2B;--green-soft:#2E5540;--cream:#FAF8F3;--paper:#FFFFFF;--sand:#EDE6D6;--gold:#B8860B;--gold-soft:#C9A961;--ink:#1A1A1A;--gray:#6B6B6B;--line:#E8E2D3}
+:root{
+  --green:#16351F;
+  --green-2:#1E4728;
+  --green-3:#2E5E3C;
+  --cream:#F7F4EC;
+  --cream-2:#EFE9DC;
+  --paper:#FFFFFF;
+  --gold:#C9A961;
+  --gold-2:#B8894A;
+  --ink:#141813;
+  --gray:#6E7168;
+  --line:#E3DDCD;
+  --shadow:0 20px 60px -20px rgba(22,53,31,.28);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.7}
+body{
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--cream);color:var(--ink);
+  -webkit-font-smoothing:antialiased;line-height:1.75;
+}
 .serif{font-family:'Noto Serif SC','Source Han Serif SC',serif}
 .eng{font-family:'Cormorant Garamond','Times New Roman',serif}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 48px;display:flex;justify-content:space-between;align-items:center;transition:background .4s,box-shadow .4s,padding .4s}
-.nav.scrolled{background:rgba(250,248,243,.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:14px 48px}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.22em;color:#fff;font-weight:500;transition:color .4s}
-.nav.scrolled .nav-logo{color:var(--green)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:.88rem;letter-spacing:.06em;color:rgba(255,255,255,.9);transition:color .3s;position:relative;padding-bottom:4px}
-.nav.scrolled .nav-links a{color:var(--green)}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .3s}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-links a.active{color:var(--gold-soft)}
-.nav.scrolled .nav-links a.active{color:var(--gold)}
-.view{display:none;animation:viewIn .6s ease}
-.view.active{display:block}
-@keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Apm7bbkyIoM6PzxYfXKcjRQfnfe') center/cover no-repeat;animation:heroSlow 24s ease-in-out infinite alternate}
-@keyframes heroSlow{0%{transform:scale(1.05)}100%{transform:scale(1.15)}}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,35,22,.75) 0%,rgba(15,35,22,.15) 55%,rgba(15,35,22,.25) 100%)}
-.hero-inner{position:relative;z-index:2;padding:0 8% 12vh;max-width:900px}
-.hero .eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;letter-spacing:.15em;color:var(--gold-soft);margin-bottom:18px}
-.hero h1{font-family:'Noto Serif SC',serif;font-weight:900;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.15;letter-spacing:.02em;margin-bottom:22px}
-.hero p{font-size:1.05rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,.9);max-width:560px;margin-bottom:32px}
-.btn{display:inline-block;padding:14px 32px;font-size:.9rem;letter-spacing:.15em;transition:all .3s;cursor:pointer}
-.btn-light{background:#fff;color:var(--green)}
-.btn-light:hover{background:var(--gold-soft);color:#fff}
-.btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff;margin-left:12px}
-.btn-outline:hover{background:#fff;color:var(--green)}
-.section{padding:110px 8%}
-.container{max-width:1240px;margin:0 auto}
-.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--gold);letter-spacing:.1em;margin-bottom:14px}
-.h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.3;color:var(--green);margin-bottom:20px}
-.lead{font-size:1.02rem;line-height:2;color:var(--gray);font-weight:300;max-width:680px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);overflow:hidden;margin-top:60px}
-.stat{background:var(--paper);padding:36px 28px;text-align:center}
-.stat .n{font-family:'Noto Serif SC',serif;font-size:2.2rem;font-weight:700;color:var(--green);line-height:1;margin-bottom:8px}
-.stat .l{font-size:.85rem;color:var(--gray);letter-spacing:.05em}
-.chapters{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:60px}
-.chapter{position:relative;height:440px;overflow:hidden;cursor:pointer;color:#fff}
-.chapter img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
-.chapter:hover img{transform:scale(1.07)}
-.chapter::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,35,22,.85) 0%,rgba(15,35,22,.1) 60%,rgba(15,35,22,.2) 100%)}
-.chapter-info{position:absolute;left:36px;right:36px;bottom:32px;z-index:2}
-.chapter-info .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--gold-soft);letter-spacing:.2em;margin-bottom:8px}
-.chapter-info h3{font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:700;margin-bottom:8px;line-height:1.3}
-.chapter-info p{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:300;line-height:1.7;max-width:420px}
-.chapter-info .go{display:inline-block;margin-top:14px;font-size:.82rem;letter-spacing:.15em;color:var(--gold-soft);border-bottom:1px solid var(--gold-soft);padding-bottom:2px}
-.timeline{margin-top:70px;position:relative;padding-left:30px}
-.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--line)}
-.tl-item{position:relative;padding-bottom:32px}
-.tl-item::before{content:'';position:absolute;left:-30px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--gold);border:3px solid var(--cream);box-sizing:content-box}
-.tl-item .yr{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);font-weight:600;margin-bottom:4px}
-.tl-item h4{font-family:'Noto Serif SC',serif;font-size:1.05rem;color:var(--green);margin-bottom:6px;font-weight:600}
-.tl-item p{font-size:.92rem;color:var(--gray);line-height:1.8;font-weight:300;max-width:600px}
-.cta{background:var(--green);color:#fff;padding:100px 8%;text-align:center}
-.cta h2{font-family:'Noto Serif SC',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--gold-soft);margin-bottom:18px}
-.cta p{color:rgba(255,255,255,.75);font-weight:300;max-width:560px;margin:0 auto 32px;line-height:1.9}
-.sub-hero{height:62vh;min-height:420px;position:relative;display:flex;align-items:flex-end;color:#fff}
-.sub-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.sub-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,35,22,.8) 0%,rgba(15,35,22,.2) 70%)}
-.sub-hero-inner{position:relative;z-index:2;padding:0 8% 80px;max-width:900px}
-.crumb{font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:16px;letter-spacing:.1em}
-.crumb a{color:var(--gold-soft)}
-.sub-hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.2;margin-bottom:14px}
-.sub-hero .sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.85);max-width:620px;line-height:1.9}
-.prose{max-width:760px;margin:0 auto;padding:80px 8% 40px}
-.prose h2{font-family:'Noto Serif SC',serif;font-size:1.6rem;color:var(--green);margin:50px 0 18px;font-weight:700}
-.prose p{font-size:1.02rem;line-height:2.1;color:#333;font-weight:300;margin-bottom:20px}
-.prose .pull{font-family:'Noto Serif SC',serif;font-size:1.25rem;line-height:1.8;color:var(--green);border-left:3px solid var(--gold);padding:8px 0 8px 28px;margin:36px 0;font-style:italic}
-.facts{background:var(--sand);padding:36px 40px;margin:40px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px}
-.fact .k{font-size:.8rem;color:var(--gray);letter-spacing:.1em;margin-bottom:4px}
-.fact .v{font-family:'Noto Serif SC',serif;font-size:1.05rem;color:var(--green);font-weight:600}
-.sub-nav{max-width:1240px;margin:0 auto;padding:0 8% 100px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.sub-nav a{padding:18px 14px;text-align:center;background:var(--paper);border:1px solid var(--line);font-size:.88rem;color:var(--green);transition:all .3s;cursor:pointer}
-.sub-nav a:hover{border-color:var(--gold);color:var(--gold)}
-.sub-nav a.active{background:var(--green);color:#fff;border-color:var(--green)}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,.61,.36,1)}
-.reveal.in{opacity:1;transform:none}
-.to-top{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--gold-soft);border:none;cursor:pointer;font-size:16px;opacity:0;pointer-events:none;transition:.3s;z-index:99}
-.to-top.show{opacity:1;pointer-events:auto}
-@media (max-width:900px){
-.nav{padding:16px 22px}
-.nav-links{gap:14px;font-size:.75rem}
-.nav-logo{font-size:.95rem}
-.stats{grid-template-columns:repeat(2,1fr)}
-.chapters{grid-template-columns:1fr}
-.sub-nav{grid-template-columns:repeat(2,1fr)}
-.facts{grid-template-columns:1fr;padding:28px}
-.section{padding:70px 7%}
-.prose{padding:60px 7% 30px}
+button{font-family:inherit}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:22px 48px;display:flex;justify-content:space-between;align-items:center;
+  transition:all .4s;
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.nav.scrolled{background:rgba(247,244,236,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line);padding:14px 48px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.18em;color:#fff;font-weight:600;line-height:1.1;transition:color .4s}
+.nav.scrolled .nav-logo{color:var(--green)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.9rem;letter-spacing:.06em;color:rgba(255,255,255,.9);position:relative;padding:4px 0;transition:color .3s}
+.nav.scrolled .nav-links a{color:var(--green)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-burger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#fff}
+
+.hero{height:100vh;min-height:660px;position:relative;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;background:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RRrQb2NF4obJv4xYFrDcepv8nWc') center/cover no-repeat;animation:heroZoom 30s ease-in-out infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1.08)}100%{transform:scale(1.22)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,14,.5) 0%,rgba(10,25,14,.15) 45%,rgba(10,25,14,.72) 100%)}
+.hero .glow{position:absolute;z-index:1;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(201,169,97,.14),transparent 62%);top:-18%;right:-12%;animation:glowDrift 20s ease-in-out infinite alternate}
+@keyframes glowDrift{0%{transform:translate(0,0)}100%{transform:translate(-10%,14%)}}
+.hero-inner{position:relative;z-index:2;padding:0 24px;max-width:900px}
+.hero .kicker{font-family:'Cormorant Garamond',serif;font-size:1.05rem;letter-spacing:.45em;color:var(--gold);margin-bottom:26px}
+.hero h1{font-family:'Noto Serif SC',serif;font-weight:900;font-size:clamp(2.9rem,7.5vw,5.6rem);line-height:1.08;margin-bottom:10px}
+.hero h1 .cymru{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(2.1rem,5vw,3.8rem);color:var(--gold);margin-top:10px}
+.hero p{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.92);max-width:560px;margin:22px auto 38px;line-height:1.9}
+.hero .btn{display:inline-block;padding:17px 46px;background:var(--gold);color:var(--green);font-size:.95rem;letter-spacing:.12em;font-weight:600;border-radius:999px;transition:all .35s;cursor:pointer;border:none}
+.hero .btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.7);font-size:.75rem;letter-spacing:.25em}
+.scroll-hint .line{width:1px;height:44px;background:rgba(255,255,255,.4);margin:0 auto 10px;animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.section{padding:110px 7%}
+.wrap{max-width:1240px;margin:0 auto}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--gold-2);letter-spacing:.22em;margin-bottom:16px;text-transform:uppercase}
+.h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:clamp(2.1rem,4.2vw,3.2rem);line-height:1.22;color:var(--green);margin-bottom:22px}
+.lead{font-size:1.08rem;line-height:2;color:var(--gray);font-weight:300;max-width:700px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:22px;overflow:hidden;margin-top:56px;border:1px solid var(--line)}
+.stat{background:var(--paper);padding:46px 36px;text-align:center}
+.stat .n{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:700;color:var(--green);line-height:1}
+.stat .l{font-size:.95rem;color:var(--gray);margin-top:10px}
+
+.region-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
+.region-card{position:relative;border-radius:22px;overflow:hidden;height:440px;cursor:pointer;display:block;transition:transform .5s,box-shadow .5s}
+.region-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:cardKen 14s ease-in-out infinite alternate}
+@keyframes cardKen{0%{transform:scale(1.02) translateX(0)}100%{transform:scale(1.12) translateX(-1.5%)}}
+.region-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.region-card:hover::before{opacity:1}
+.region-card::before{content:'';position:absolute;inset:0;z-index:2;border-radius:22px;border:1.5px solid rgba(201,169,97,.7);opacity:0;transition:opacity .4s;pointer-events:none}
+.region-card .mask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,14,.08) 40%,rgba(10,25,14,.78) 100%)}
+.region-card .rc{position:absolute;left:34px;right:34px;bottom:30px;color:#fff}
+.region-card .rc .en{font-size:.85rem;letter-spacing:.25em;color:var(--gold);margin-bottom:8px}
+.region-card .rc h3{font-family:'Noto Serif SC',serif;font-size:2rem;font-weight:700}
+.region-card .rc p{font-size:.92rem;color:rgba(255,255,255,.8);margin-top:8px;font-weight:300}
+.region-card .count{position:absolute;top:26px;left:26px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;font-size:.78rem;padding:6px 14px;border-radius:999px;letter-spacing:.1em}
+
+.spot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px}
+.spot-card{background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:0 8px 30px -12px rgba(22,53,31,.18);transition:transform .4s,box-shadow .4s;display:flex;flex-direction:column}
+.spot-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.spot-card .ph{position:relative;height:240px;overflow:hidden}
+.spot-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.spot-card:hover .ph img{transform:scale(1.07)}
+.spot-card .ph .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--green);font-size:.72rem;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
+.spot-card .bd{padding:24px 26px;flex:1;display:flex;flex-direction:column}
+.spot-card .bd .en{font-size:.8rem;color:var(--gold-2);letter-spacing:.18em;margin-bottom:6px}
+.spot-card .bd h4{font-family:'Noto Serif SC',serif;font-size:1.3rem;color:var(--green);font-weight:700}
+.spot-card .bd p{font-size:.9rem;color:var(--gray);margin-top:10px;line-height:1.8;font-weight:300;flex:1}
+.spot-card .bd .go{margin-top:16px;color:var(--green);font-size:.85rem;display:flex;align-items:center;gap:8px}
+.spot-card .bd .go .arr{transition:transform .3s}
+.spot-card:hover .bd .go .arr{transform:translateX(5px)}
+
+.dark{background:var(--green);color:#fff;padding:115px 7%}
+.dark .eyebrow{color:var(--gold)}
+.dark h2{font-family:'Noto Serif SC',serif;font-weight:900;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.2;margin-bottom:28px}
+.dark p{font-size:1.05rem;line-height:2;color:rgba(255,255,255,.8);max-width:700px;font-weight:300}
+
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:28px}
+.info-card .ph{height:200px;border-radius:12px;overflow:hidden;margin-bottom:22px}
+.info-card .ph img{width:100%;height:100%;object-fit:cover}
+.info-card h4{font-family:'Noto Serif SC',serif;font-size:1.35rem;color:var(--gold);margin-bottom:10px}
+.info-card p{font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.78)}
+.info-card a.more{display:inline-block;margin-top:14px;color:var(--gold);font-size:.85rem;border-bottom:1px solid rgba(201,169,97,.5);padding-bottom:3px}
+
+.subhead{position:relative;height:62vh;min-height:460px;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.subhead .bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:heroZoom 28s ease-in-out infinite alternate}
+.subhead::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,14,.45) 0%,rgba(10,25,14,.1) 50%,rgba(10,25,14,.8) 100%)}
+.subhead .wrap{position:relative;z-index:2;padding-bottom:48px;width:100%}
+.crumb{font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:18px;letter-spacing:.05em}
+.crumb a{color:var(--gold);border-bottom:1px solid rgba(201,169,97,.5)}
+.subhead h1{font-family:'Noto Serif SC',serif;font-weight:900;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.1}
+.subhead .en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--gold);margin-top:6px;letter-spacing:.1em}
+
+.detail{display:grid;grid-template-columns:1.6fr 1fr;gap:60px}
+.detail .main p{font-size:1.05rem;line-height:2.1;color:#3A3D36;font-weight:300;margin-bottom:22px}
+.detail .main h3{font-family:'Noto Serif SC',serif;font-size:1.5rem;color:var(--green);margin:38px 0 16px}
+.detail .main blockquote{border-left:3px solid var(--gold);padding:6px 0 6px 24px;margin:28px 0;color:var(--green);font-family:'Noto Serif SC',serif;font-size:1.15rem;line-height:1.9}
+.facts{background:var(--paper);border-radius:18px;padding:32px;box-shadow:0 8px 30px -14px rgba(22,53,31,.2);height:max-content;position:sticky;top:100px}
+.facts h4{font-family:'Noto Serif SC',serif;color:var(--green);font-size:1.2rem;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.facts .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.facts .row:last-child{border-bottom:none}
+.facts .k{color:var(--gray);flex-shrink:0}
+.facts .v{color:var(--ink);text-align:right;font-weight:500}
+.facts .btn{display:block;margin-top:20px;text-align:center;padding:14px;background:var(--green);color:var(--gold);border-radius:12px;font-size:.9rem;cursor:pointer;border:none;width:100%}
+.facts .btn:hover{background:var(--green-3)}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.gallery .g{height:170px;border-radius:14px;overflow:hidden}
+.gallery .g img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.gallery .g:hover img{transform:scale(1.1)}
+
+.nearby{margin-top:70px}
+.nearby h3{font-family:'Noto Serif SC',serif;font-size:1.5rem;color:var(--green);margin-bottom:8px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;color:var(--green);font-size:.9rem;border-bottom:1px solid var(--green);padding-bottom:3px;cursor:pointer}
+
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pill{padding:13px 26px;border:1.5px solid var(--green-3);border-radius:999px;color:var(--green);background:transparent;font-size:.92rem;cursor:pointer;transition:all .3s;display:inline-block}
+.pill:hover,.pill.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+.safe-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.safe-card{position:relative;border-radius:16px;overflow:hidden;height:170px;display:flex;align-items:flex-end;padding:20px;color:#fff;text-decoration:none;cursor:pointer}
+.safe-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.safe-card:hover .bg{transform:scale(1.12)}
+.safe-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,14,.08),rgba(10,25,14,.72))}
+.safe-card .lbl{position:relative;z-index:2;font-family:'Noto Serif SC',serif;font-size:1.15rem;font-weight:600}
+.safe-card .sub{position:relative;z-index:2;font-size:.78rem;opacity:.88;margin-top:4px}
+@media(max-width:700px){.safe-cards{grid-template-columns:1fr}}
+
+.map-wrap{position:relative;background:linear-gradient(160deg,#EEF1E8,#E4E9DA);border-radius:24px;padding:36px 28px 28px;overflow:hidden;margin-top:50px}
+.map-svg{width:100%;max-width:520px;margin:0 auto;display:block}
+.map-land{fill:#CFD8C4;stroke:#A9B89B;stroke-width:1.5}
+.map-sea{fill:#DCE5E0}
+.map-pin{cursor:pointer}
+.map-pin circle{stroke:#fff;stroke-width:2.2;transition:r .25s}
+.map-pin:hover circle{r:10.5}
+.map-pin text{font-family:'Noto Sans SC',sans-serif;font-size:11px;fill:var(--green);font-weight:600;opacity:0;transition:opacity .2s;pointer-events:none}
+.map-pin:hover text{opacity:1}
+.map-legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;justify-content:center;font-size:.85rem;color:var(--gray)}
+.map-legend span{display:flex;align-items:center;gap:7px}
+.map-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+
+.alert{background:var(--green);color:#fff;border-radius:16px;padding:30px 34px;border-left:4px solid var(--gold);margin-top:24px}
+.alert strong{color:var(--gold)}
+
+.footer{background:var(--cream-2);padding:54px 7%;border-top:1px solid var(--line);font-size:.86rem;color:var(--gray)}
+.footer .r{margin-bottom:10px}
+.footer a{color:var(--green);border-bottom:1px solid var(--line)}
+
+.to-top{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--green);color:var(--gold);border:none;cursor:pointer;font-size:17px;opacity:0;pointer-events:none;transition:.3s;z-index:99}
+.to-top.show{opacity:1;pointer-events:auto}
+
+.reveal{opacity:0;transform:translateY(44px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:920px){
+  .nav{padding:14px 20px}
+  .nav.scrolled{padding:12px 20px}
+  .nav-links{display:none;position:absolute;top:100%;right:0;left:0;flex-direction:column;background:var(--cream);padding:20px;gap:18px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+  .nav-links.open{display:flex}
+  .nav-links a{color:var(--green)!important}
+  .nav-burger{display:block;color:#fff}
+  .nav.scrolled .nav-burger{color:var(--green)}
+  .section{padding:70px 6%}
+  .dark{padding:75px 6%}
+  .stats{grid-template-columns:1fr}
+  .region-grid{grid-template-columns:1fr}
+  .region-card{height:380px}
+  .spot-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .detail{grid-template-columns:1fr;gap:30px}
+  .facts{position:static}
+  .gallery{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<nav class="nav" id="nav">
-  <div class="nav-logo eng" style="font-weight:600">CYMRU · WALES</div>
-  <div class="nav-links">
-    <a href="#home" data-nav="home">首页</a>
-    <a href="#language" data-nav="language">威尔士语</a>
-    <a href="#castles" data-nav="castles">城堡</a>
-    <a href="#roots" data-nav="roots">寻根</a>
-    <a href="#david" data-nav="david">圣大卫日</a>
-    <a href="#wool" data-nav="wool">羊毛</a>
-  </div>
-</nav>
+<div id="app"></div>
+<button class="to-top" id="toTop">↑</button>
+<script>
+const IMG = {
+  conwy:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RRrQb2NF4obJv4xYFrDcepv8nWc',
+  caernarfon:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Dlwsb9U2doWroixmwNbc4KZ9nHh',
+  bay:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PQ2mbB9dmoAFbCxLmN1cXEJynlc',
+  david:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/XDLKbcCT3o0IPqx7uyEcbJ1wnGd',
+  sheep:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Rt1ebet5moPUxlxY60Kc3zcbnGb',
+  pembroke:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SF0cbxIfboo8aBxVt6ycu4g3nHf',
+  cottage:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BLveb9O50oxBrFxVNfGcTCN1nVh',
+  menai:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WDoVbnpjlonKDlxpVRscWP4Enxg',
+  menaiWide:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Eb8EbWpJ5o6uNpx9M68c1hpDncd',
+  stack:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LkttbEdlDo9PqLxwsXHcWz4lnBf',
+  beaumaris:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WhPkbeA9WoHAyIxKbgAcyT7znaf',
+  parys:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/K1JDbx7OToL3CtxdADocGuVnneb',
+  train:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Lg17bwJiSoo9z7xFLR5c5UitnHb',
+  holyhead:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/By0Jb34EZoSuyVxUnKtchqFdn2f',
+  snowdon:'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CA7FbYbWOoCF5txhqfJcR9Nun4b'
+};
 
-<section class="view active" id="view-home">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-inner">
-      <div class="eyebrow eng">A Journey Through Time</div>
-      <h1 class="serif">在山海之间，<br>读懂威尔士的两千年</h1>
-      <p>从喀里多尼亚的密林到爱德华一世的铁城，从生生不息的威尔士语，到三月一日满城飞扬的红龙旗帜——这里的每一座山、每一片海，都在低声讲故事。</p>
-      <a class="btn btn-light" href="#language">开始探索</a>
-      <a class="btn btn-outline" href="https://www.visitwales.com/info" target="_blank" rel="noopener">Visit Wales 原文</a>
+const REGIONS = [
+  {id:'island', name:'安格尔西海岛', en:"Ynys Môn · Anglesey", desc:'威尔士最大的离岛，桥、灯塔、古堡与铜矿沿岸串成一条环岛慢线。', img:IMG.menaiWide, count:'4 处风景'},
+  {id:'castles', name:'城堡与古堡', en:'Castles & Fortresses', desc:'六百多座城堡遗迹散落山海之间，读懂中世纪的防御与秩序。', img:IMG.beaumaris, count:'3 处精选'},
+  {id:'mountains', name:'山地与旷野', en:'Mountains & Wilds', desc:'斯诺登尼亚的峰峦、石径与牧羊山谷，慢旅行的起点。', img:IMG.snowdon, count:'3 处风景'},
+  {id:'coast', name:'海岸与海岬', en:'Coast & Headlands', desc:'从彭布罗克悬崖到圣大卫古城，英国最美的海岸步道之一。', img:IMG.pembroke, count:'3 处风景'}
+];
+
+const SPOTS = [
+ {id:'menai', region:'island', name:'梅奈悬索桥', en:'Menai Suspension Bridge', tag:'百年桥梁', img:IMG.menai,
+  facts:[['建成年代','1826 年'],['设计者','托马斯·特尔福德'],['位置','梅奈海峡'],['类型','历史工程地标']],
+  summary:'托马斯·特尔福德设计的悬索桥于 1826 年通车，是世界上最早的现代悬索桥之一，连接威尔士本土与安格尔西岛。',
+  body:[
+    '在悬索桥出现之前，从威尔士本土前往安格尔西岛只能依靠渡轮，风浪与潮汐常常让行程充满不确定性。19 世纪初，为了让都柏林与伦敦之间的交通更加顺畅，工程师托马斯·特尔福德受命在梅奈海峡上修建一座固定桥梁。',
+    '他最终采用了大胆的悬索方案：16 条巨大的铁链从两岸石塔之间凌空跨过，桥面悬于海面之上，既不阻挡海峡中往来的高桅帆船，也能承受潮汐与风浪。1826 年桥梁通车时，它是当时世界上最长的悬索桥，被誉为工程奇迹。',
+    '今天走近桥身，仍能看见整齐的石塔、锈迹斑斑的铁链与横跨海峡的优雅弧线。傍晚时分，桥身映在潮水与落日之间，是北威尔士最具代表性的画面之一。'
+  ],
+  quote:'"一座桥把孤岛变成了旅程的起点，也把一个时代的工程雄心，留在了海峡之上。"'},
+ {id:'stack', region:'island', name:'南斯塔克灯塔', en:'South Stack Lighthouse', tag:'海岸灯塔', img:IMG.stack,
+  facts:[['建成年代','1809 年'],['塔高','28 米'],['位置','霍利黑德岛外'],['登塔','约 400 级石阶']],
+  summary:'白色灯塔矗立在霍利黑德岛外海的小岛上，与墨绿色海面、悬崖和海鸟构成安格尔西最经典的海岸画面。',
+  body:[
+    '南斯塔克灯塔坐落在安格尔西西北角一座被海水分隔的小岛上，1809 年建成，用来指引船只绕过这片暗礁密布的危险海域。灯塔通体洁白，塔楼、附属屋舍与跨海铁桥一起，构成一幅近乎电影画面的海岸图景。',
+    '要走到灯塔脚下，需要沿崖壁盘旋而下约 400 级石阶，再跨过一座窄窄的铁桥。涨潮时小岛被海水环抱，风大时海浪拍击崖壁，能真切感受到灯塔守塔人曾经面对的孤独与壮阔。',
+    '灯塔周围的悬崖也是海鸟的天堂，春夏时节可以看到海鹦、海鸦与三趾鸥在岩壁间筑巢。天气晴朗时，从崖顶远眺，爱尔兰海一直铺到天际。'
+  ],
+  quote:'"白色的塔身是给航海者的承诺：再凶险的海域，也有一盏灯为你而亮。"'},
+ {id:'beaumaris', region:'island', name:'博马里斯城堡', en:'Beaumaris Castle', tag:'世界遗产', img:IMG.beaumaris,
+  facts:[['始建','1295 年'],['始建者','爱德华一世'],['特点','同心防御布局'],['级别','UNESCO 世界遗产']],
+  summary:'爱德华一世时期修建的城堡以规整的同心防御布局闻名，虽最终未完工，却留下宏大的石墙、塔楼与护城河。',
+  body:[
+    '博马里斯城堡是爱德华一世征服威尔士后修建的一系列城堡中最后、也是技术上最完美的一座。1295 年动工，由当时的首席建筑师詹姆斯·圣乔治主持，采用了极为规整的"同心防御"设计：外层城墙环绕内层城墙，护城河再环绕外墙，层层设防。',
+    '城堡原本计划修建巨大的门楼与多座塔楼，但随着军费转向苏格兰战场，工程一再拖延，最终停在了近乎完工却未完工的状态。也正因如此，它保留了中世纪军事建筑最清晰的结构——沿城墙环行，能清楚读出每一道墙、每一座塔、每一道射孔的用途。',
+    '城堡外护城河水波平静，倒映着圆形塔楼；城堡内侧是宽阔的草坪与石墙。1986 年，它作为"圭内斯爱德华一世时期的城堡与城墙"的一部分被列入世界遗产。'
+  ],
+  quote:'"它是一座没有完工的杰作，却因为未完成，反而让中世纪的军事秩序一览无余。"'},
+ {id:'parys', region:'island', name:'帕里斯山', en:'Parys Mountain', tag:'铜矿遗迹', img:IMG.parys,
+  facts:[['类型','露天铜矿遗迹'],['鼎盛','18 世纪后期'],['地貌','赭红、金黄与褐色'],['开放','公共步道免费']],
+  summary:'这片露天矿区曾是世界重要的铜矿产区，五彩斑斓的矿迹与周围的海岸绿意形成超现实的对照。',
+  body:[
+    '帕里斯山位于安格尔西岛北部，看似一座普通的小山，走近却是一片赭红、金黄、紫褐与灰白交织的奇异地貌。这里的铜矿开采可以追溯到青铜时代，18 世纪后期更是一度成为世界上产量最大的铜矿之一。',
+    '当时的矿工从地表向下挖开巨大的矿坑，铜矿被运到附近的阿姆卢赫港冶炼、装船，支撑起英国的航海与工业。随着矿脉枯竭，开采在 20 世纪初停止，留下一片被彻底重塑的山体。',
+    '今天沿山上的公共步道行走，脚下是风化的矿渣与锈色的岩石，四周几乎没有树木，像是走进了另一个星球。这里也是地质与工业史爱好者的目的地，风吹过矿坑的声音，仿佛仍在讲述那段炽热的矿业岁月。'
+  ],
+  quote:'"人类把山挖空，又把它还给时间；剩下的颜色，成了大地自己的画。"'},
+ {id:'conwy', region:'castles', name:'康威城堡', en:'Conwy Castle', tag:'中世纪城堡', img:IMG.conwy,
+  facts:[['始建','1283 年'],['始建者','爱德华一世'],['特点','八座塔楼'],['级别','UNESCO 世界遗产']],
+  summary:'康威城堡以八座高耸的塔楼横跨河口，是爱德华一世北威尔士城堡链中最具气势的一座。',
+  body:[
+    '康威城堡坐落在北威尔士康威河畔，1283 年由爱德华一世下令修建，是其征服威尔士后构建的"铁环"防御体系的核心。城堡八座巨大的塔楼沿河排列，石墙从岸边拔地而起，远远望去如同从山河之间长出来一般。',
+    '城堡内部保存着中世纪皇家宫殿的遗迹，包括大厅、礼拜堂与王室居室。沿狭窄的螺旋阶梯登上塔顶，可以俯瞰康威河、海港以及横跨河流的现代桥梁，古老与现代在同一画面里相遇。',
+    '城堡外的康威小城仍保留着完整的中世纪城墙，城墙总长约 1.3 公里，绕城一圈只需半个多小时，是体验中世纪城镇格局最好的方式之一。'
+  ],
+  quote:'"八座塔楼把一段征服史站成了风景，也把王权的重量砌进了石头。"'},
+ {id:'david', region:'castles', name:'圣大卫大教堂', en:'St Davids Cathedral', tag:'圣城古教堂', img:IMG.david,
+  facts:[['所在','圣大卫市'],['地位','英国最小城市'],['主保','圣大卫'],['特点','隐于山谷的古教堂']],
+  summary:'圣大卫大教堂藏在英国最小城市的山谷里，是威尔士主保圣人圣大卫的安息之地，千年朝圣之路的终点。',
+  body:[
+    '威尔士最西端的圣大卫，人口不足两千，却是英国名义上最小的城市，因为它拥有一座大教堂。圣大卫是威尔士的主保圣人，公元 6 世纪在这里建立修道院，使此地成为威尔士最重要的朝圣中心。',
+    '与许多宏伟教堂不同，圣大卫大教堂刻意建在山谷之中，从外面只能看到石塔与尖顶，走近才发现它静静卧在溪流与草地之间。教堂内部是诺曼式与哥特式交织的石柱、穹顶与圣坛，光线从高窗洒下，安静而庄严。',
+    '教堂旁还保留着中世纪主教宫的废墟，紫色砂岩的残墙在夕阳下格外动人。如今的圣大卫也是徒步者前往彭布罗克海岸步道的重要起点，朝圣与旅行在这里延续。'
+  ],
+  quote:'"它不争高度，只把一千年的祈祷，安放在山谷与海风之间。"'},
+ {id:'caernarfon', region:'castles', name:'卡那封城堡', en:'Caernarfon Castle', tag:'王者之城', img:IMG.caernarfon,
+  facts:[['始建','1283 年'],['始建者','爱德华一世'],['特点','多边形塔楼与彩石墙'],['级别','UNESCO 世界遗产']],
+  summary:'卡那封城堡以多边形石塔与彩石墙闻名，伫立在梅奈海峡畔，是爱德华一世"铁环"防御中最具王者气势的一座，也是历代威尔士亲王的册封之地。',
+  body:[
+    '卡那封城堡坐落在北威尔士梅奈海峡与塞翁特河交汇处，1283 年由爱德华一世下令修建。这里原本是罗马要塞与诺曼城堡的所在地，爱德华一世选址于此，意在把这座新镇牢牢控制在自己手中。',
+    '与其他城堡不同，卡那封没有采用同心防御，而是沿河岸筑成一道绵延的石墙，配上一座座多边形塔楼。塔身由深浅不一的色石砌成，在阳光下泛出温润的纹理，据说这种设计是有意模仿君士坦丁堡的城墙，彰显王权的野心。',
+    '这里也是王室记忆的所在：1969 年，查尔斯王子在此受封威尔士亲王，仪式的影像传遍世界。如今沿城墙与塔楼漫步，护城河外的港湾停泊着帆船，古堡的轮廓倒映在平静水面，是北威尔士最具代表性的画面之一。'
+  ],
+  quote:'"多边形的塔楼把一个王朝的野心砌进石头，也把加冕的荣光留在了海峡之畔。"'},
+ {id:'snowdon', region:'mountains', name:'斯诺登尼亚', en:'Yr Wyddfa · Snowdonia', tag:'国家公园', img:IMG.snowdon,
+  facts:[['类型','国家公园'],['最高峰','Yr Wyddfa 1085 米'],['登顶','小火车或徒步'],['语言','威尔士语核心区']],
+  summary:'斯诺登尼亚是威尔士最壮阔的山地国家公园，峰峦、湖泊、石径与古老传说交织成一片凯尔特旷野。',
+  body:[
+    '斯诺登尼亚（威尔士语称 Eryri）位于威尔士西北部，是威尔士最早的国家公园，也是全英游客最多的国家公园之一。公园内最高峰 Yr Wyddfa（斯诺登山）海拔 1085 米，是威尔士的屋脊，云雾、湖泊与陡峭山脊构成其标志性的风景。',
+    '登顶有两种方式：可以沿 Llanberis 小径等徒步路线攀爬，也可以搭乘已有百年历史的斯诺登山地小火车，缓缓穿过山谷直达山顶。山顶的游客中心与咖啡馆被称作"世界上最繁忙的山顶咖啡馆"。',
+    '山脚下的 Llanberis 曾是石板矿业小镇，如今保留着矿山博物馆与宁静湖泊。这里也是威尔士语最活跃的地区之一，村中小酒馆、路标与孩童的对话里，仍能听见这门古老语言的呼吸。'
+  ],
+  quote:'"云落在山脊上，火车鸣笛穿过山谷，威尔士最古老的灵魂在高处。"'},
+ {id:'sheep', region:'mountains', name:'山间牧道', en:'Mountain Pastures', tag:'乡野风景', img:IMG.sheep,
+  facts:[['景观','牧羊山谷'],['常见','羊群与牧羊犬'],['特色','石砌农舍'],['最佳','春夏与初秋']],
+  summary:'在斯诺登尼亚的山径上，牧羊人、牧羊犬与成群的绵羊是最生动的乡野风景，延续着数百年的山地生活。',
+  body:[
+    '威尔士的山地不只是风景，也是世代放牧的牧场。早在中世纪，这里的农人就开始在高山草甸放牧绵羊，羊毛与石板一起，构成了这片土地的经济根基。',
+    '如今走在山间步道，常会遇到成群的绵羊占住小径，或者看见牧羊人带着牧羊犬在山坡上赶羊。牧羊犬听从一连串短促的哨声与口令，在乱石与草丛间奔跑，把羊群聚拢成一条移动的白色溪流。',
+    '山谷里散落着石砌的农舍与篱笆，许多石头就地取材，与山岩几乎同色。对想要慢下来的旅行者，住进这样的山间农庄，看晨雾从草地升起，是理解威尔士最温柔的方式。'
+  ],
+  quote:'"山是牧场，云是邻居，牧羊犬的哨声是山谷里最古老的旋律。"'},
+ {id:'cottage', region:'mountains', name:'斯诺登石屋', en:'Snowdonia Cottages', tag:'山居建筑', img:IMG.cottage,
+  facts:[['材料','当地石板'],['特色','与山岩同色'],['用途','度假小屋'],['分布','山谷与湖畔']],
+  summary:'斯诺登尼亚的石砌小屋用当地石板垒成，灰墙、陡坡屋顶与山间旷野融为一体，是威尔士山居美学的代表。',
+  body:[
+    '斯诺登尼亚多雨且多石，当地人便就地取材，用灰色的石板垒墙、铺顶，建起一座座与山岩几乎同色的小屋。厚厚的石墙抵御山风，陡斜的屋顶让雨水快速滑落，是山地生活智慧的结晶。',
+    '这些小屋许多曾经是矿工、牧羊人的住所，如今被改造成度假屋，保留着低矮的木门、石砌壁炉与小格窗。屋外是连绵的草地、石墙与远处的峰峦。',
+    '在光影变化下，石屋的灰色会随天气呈现出暖褐、青灰等不同色调。它不张扬，却代表了一种与自然共生的建筑哲学，也是威尔士乡村最动人的风景之一。'
+  ],
+  quote:'"石头从山里来，房子又回到山里，人居与旷野在此没有边界。"'},
+ {id:'pembroke', region:'coast', name:'彭布罗克海岸', en:'Pembrokeshire Coast', tag:'国家公园', img:IMG.pembroke,
+  facts:[['类型','海岸国家公园'],['步道','约 300 公里'],['特色','悬崖、海岬与海湾'],['观鸟','海鹦与海鸟']],
+  summary:'彭布罗克海岸是英国唯一以海岸命名的国家公园，悬崖、海岬、蓝旗海滩与漫长步道勾勒出威尔士的西海岸。',
+  body:[
+    '彭布罗克海岸国家公园位于威尔士西南角，是英国唯一完全以海岸景观为主的国家公园。海岸线约 300 公里，悬崖、海蚀洞、沙滩与彩色小镇交替出现，曾被《国家地理》评为全球第二美的海岸目的地。',
+    '彭布罗克海岸步道沿着崖顶蜿蜒，一面临海、一面临野，运气好时能看到海鹦、海豹与成群海鸟。徒步者可以分多日走完，也可以选择其中一段做半日轻徒步。',
+    '沿线的小镇如 Tenby、St Davids 与 Solva 各具风情：Tenby 有彩色房屋与港湾沙滩，St Davids 是古老的圣城，Solva 则是藏在海湾里的小渔村。这里也是威尔士最适合夏季慢旅行的区域。'
+  ],
+  quote:'"海把崖壁雕成曲线，步道把人带到风里，西威尔士的蓝是会呼吸的。"'},
+ {id:'cardiff', region:'coast', name:'加的夫', en:'Cardiff', tag:'首都', img:IMG.bay,
+  facts:[['地位','威尔士首都'],['坐标','51.48°N, 3.18°W'],['语言','威尔士语与英语'],['特色','城堡、海湾与文化']],
+  summary:'加的夫是威尔士的首都与门户，城堡、海湾、千年艺术中心与年轻氛围，让城市与海岸在慢旅行中相遇。',
+  body:[
+    '加的夫位于威尔士南部布里斯托尔湾畔，是威尔士的首都与最大城市，也是大多数旅行者认识威尔士的第一站。城市中心有两千年历史的加的夫城堡，城堡的罗马地基、诺曼塔楼与维多利亚装饰房间，浓缩了威尔士的多层历史。',
+    '步行向南约两公里便到加的夫湾，曾经的煤炭出口码头如今被改造成滨水休闲区，标志性的红色 Pierhead 大楼、千年艺术中心与白色水镜喷泉构成城市新名片。',
+    '加的夫也是一座年轻的大学城，市集、独立咖啡馆与威尔士语标识并存。从这里出发，无论是乘火车进入山谷，还是沿海岸向西，都能顺畅地把城市与山海连接起来。'
+  ],
+  quote:'"从一座城堡到一片海湾，加的夫把威尔士的过去与现在轻轻连在一起。"'},
+ {id:'train', region:'coast', name:'窄轨蒸汽火车', en:'Heritage Railways', tag:'风景铁路', img:IMG.train,
+  facts:[['代表','Talyllyn 等线路'],['始于','19 世纪'],['特色','窄轨蒸汽机车'],['体验','山谷与海岸慢车']],
+  summary:'威尔士保留着多条百年窄轨蒸汽铁路，红色机车穿过山谷与海岸，把交通本身变成一段怀旧旅程。',
+  body:[
+    '工业时代的威尔士修建了大量窄轨铁路，用来把石板、煤炭与矿石从山区运到港口。随着公路兴起，这些铁路一度荒废，却被志愿者们一条条保留下来，成为今天的"活遗产"。',
+    '其中 Talyllyn 铁路是世界上第一条由志愿者运营的保护铁路，自 1951 年运行至今；红色与黑色的蒸汽小火车拖着老式车厢，缓缓穿过牧场、树林与河谷，汽笛声在山间回荡。',
+    '此外还有 Ffestiniog、Snowdon 山地铁路等多条线路，有的穿行山谷，有的攀上山脊，有的沿海岸而行。对旅行者来说，买一张慢车票，靠在木窗边看风景，是威尔士最具怀旧感的体验之一。'
+  ],
+  quote:'"蒸汽升起，汽笛长鸣，时间在窄轨上慢了下来。"'}
+];
+
+const $app = document.getElementById('app');
+function getSpot(id){return SPOTS.find(s=>s.id===id);}
+function getRegion(id){return REGIONS.find(r=>r.id===id);}
+function spotsInRegion(id){return SPOTS.filter(s=>s.region===id);}
+
+function navHTML(){
+  return `
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#/">CYMRU<br>WALES</a>
+    <button class="nav-burger" id="burger">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#/">概况</a>
+      <a href="#/" data-scroll="regions">景点</a>
+      <a href="#arrival">抵达与气候</a>
+      <a href="#safety">安全提示</a>
     </div>
-  </div>
-  <div class="section">
-    <div class="container">
-      <div class="reveal">
-        <div class="eyebrow eng">Wales at a Glance</div>
-        <h2 class="h2 serif">关于威尔士的五件事</h2>
-        <p class="lead">威尔士（Cymru）是大不列颠岛西部的凯尔特古国，三面环海，中部与北部是连绵的斯诺登尼亚山脉。它不是英国的一个"郡"，而是一个保留着自己语言、节日与民族认同的国度。</p>
+  </nav>`;
+}
+
+function homeView(){
+  const regionCards = REGIONS.map(r=>`
+    <a class="region-card ${r.wide?'wide':''}" href="#/region/${r.id}">
+      <img src="${r.img}" alt="${r.name}">
+      <span class="count">${r.count}</span>
+      <div class="mask"></div>
+      <div class="rc">
+        <div class="eng">${r.en}</div>
+        <h3 class="serif">${r.name}</h3>
+        <p>${r.desc}</p>
       </div>
-      <div class="stats reveal">
-        <div class="stat"><div class="n serif">600+</div><div class="l">座城堡遗址散布全境</div></div>
-        <div class="stat"><div class="n serif">2</div><div class="l">官方语言：威尔士语与英语</div></div>
-        <div class="stat"><div class="n serif">4</div><div class="l">处联合国教科文组织世界遗产</div></div>
-        <div class="stat"><div class="n serif">3月1日</div><div class="l">圣大卫日，威尔士国庆日</div></div>
+    </a>`).join('');
+
+  const featured = ['menai','stack','pembroke','snowdon','conwy','train'].map(id=>{
+    const s=getSpot(id);
+    return `
+    <a class="spot-card" href="#/spot/${s.id}">
+      <div class="ph"><img src="${s.img}" alt="${s.name}"><span class="tag">${s.tag}</span></div>
+      <div class="bd">
+        <div class="en">${s.en}</div>
+        <h4 class="serif">${s.name}</h4>
+        <p>${s.summary}</p>
+        <span class="go">查看详情 <span class="arr">→</span></span>
       </div>
-      <div class="chapters">
-        <a class="chapter reveal" href="#language">
-          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Evp0bUcexoE5y1xUR3bcUPx3nsd" alt="威尔士双语路牌">
-          <div class="chapter-info">
-            <div class="num eng">Chapter 01</div>
-            <h3 class="serif">威尔士语</h3>
-            <p>欧洲最古老的活语言之一，至今仍有数十万人日常使用。</p>
-            <span class="go">阅读 →</span>
-          </div>
-        </a>
-        <a class="chapter reveal" href="#castles">
-          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RUgkbYymeobkYpxukdWcNDy1nXg" alt="Conwy 城堡">
-          <div class="chapter-info">
-            <div class="num eng">Chapter 02</div>
-            <h3 class="serif">城堡与博物馆</h3>
-            <p>爱德华一世的"铁环"与九十余座博物馆，陈列着两千年的时光。</p>
-            <span class="go">阅读 →</span>
-          </div>
-        </a>
-        <a class="chapter reveal" href="#roots">
-          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BLveb9O50oxBrFxVNfGcTCN1nVh" alt="斯诺登尼亚石屋">
-          <div class="chapter-info">
-            <div class="num eng">Chapter 03</div>
-            <h3 class="serif">寻根之旅</h3>
-            <p>数百万威尔士后裔散落全球，回到祖辈的村庄，重连家族的根系。</p>
-            <span class="go">阅读 →</span>
-          </div>
-        </a>
-        <a class="chapter reveal" href="#david">
-          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/HI5ebwBvHobo3hxZrEncxzQAnie" alt="红龙旗">
-          <div class="chapter-info">
-            <div class="num eng">Chapter 04</div>
-            <h3 class="serif">圣大卫日</h3>
-            <p>每年三月一日，水仙与韭葱襟前盛开，红龙旗帜满城飞扬。</p>
-            <span class="go">阅读 →</span>
-          </div>
-        </a>
-        <a class="chapter reveal" href="#wool" style="grid-column:1/-1;height:320px">
-          <img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FGDpby72xofWULx8IuIcB1l4nHd" alt="威尔士提花毯">
-          <div class="chapter-info">
-            <div class="num eng">Chapter 05</div>
-            <h3 class="serif">羊毛与纺织工艺</h3>
-            <p>从深谷水力磨坊到独立工坊，威尔士羊毛曾温暖整个大英帝国，今天仍在梭声里延续。</p>
-            <span class="go">阅读 →</span>
-          </div>
-        </a>
+    </a>`;
+  }).join('');
+
+  return `
+  <div class="view active" data-view="home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="glow"></div>
+      <div class="hero-inner">
+        <div class="kicker">WELCOME TO CYMRU</div>
+        <h1 class="serif">欢迎来到威尔士<span class="cymru">Cymru</span></h1>
+        <p>在山脉、城堡与海岸线之间，遇见一个独特的国度。</p>
+        <a class="btn" href="#/" data-scroll="regions">开始探索</a>
       </div>
-      <div class="reveal" style="margin-top:110px">
-        <div class="eyebrow eng">A Short Timeline</div>
-        <h2 class="h2 serif">两千年的时间线</h2>
-        <div class="timeline">
-          <div class="tl-item"><div class="yr eng">公元前 250,000 年</div><h4>最早的人类足迹</h4><p>考古发现表明，早在旧石器时代，人类已在威尔士的洞穴中居住，留下了最早的生活与狩猎痕迹。</p></div>
-          <div class="tl-item"><div class="yr eng">约公元 500 年</div><h4>凯尔特王国的兴起</h4><p>罗马人离开后，布立吞人在这片土地上建立了诸多凯尔特小王国，威尔士语也在此时逐渐成形。</p></div>
-          <div class="tl-item"><div class="yr eng">1216 – 1536 年</div><h4>威尔士公国</h4><p>圭内斯公国（Principality of Wales）在此期间存续，Llywelyn the Great 与 Llywelyn the Last 是最后两位本土威尔士亲王。</p></div>
-          <div class="tl-item"><div class="yr eng">1283 年起</div><h4>爱德华一世的"铁环"</h4><p>英格兰国王爱德华一世修建 Conwy、Caernarfon、Harlech、Beaumaris 四座宏伟城堡，组成包围威尔士的"铁环"，今同列世界遗产。</p></div>
-          <div class="tl-item"><div class="yr eng">1536 年</div><h4>《联合法案》</h4><p>英格兰与威尔士正式法律合并，英语成为官方行政语言。但威尔士语在民间、诗歌与宗教生活中顽强延续至今。</p></div>
-          <div class="tl-item"><div class="yr eng">18 世纪至今</div><h4>工业革命与文化复兴</h4><p>斯旺西的铜、梅瑟蒂德菲尔的钢铁、北部的板岩矿业，让威尔士成为工业革命的引擎。20 世纪威尔士语运动兴起，1993 年《威尔士语言法案》赋予其官方地位。</p></div>
+      <div class="scroll-hint"><div class="line"></div>SCROLL</div>
+    </section>
+
+    <section class="section" id="regions">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Cymru · Wales</div>
+          <h2 class="h2 serif">山海之外，也有绵长的故事</h2>
+          <p class="lead">Cymru 是威尔士的威尔士语名称。这里有起伏的群山、蜿蜒海岸与古老城堡；威尔士语与英语共同构成日常风景。选择一个主题，从这里开始你的旅程。</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="n" data-count="600" data-suffix="+">0</div><div class="l">座城堡遗址与古堡</div></div>
+          <div class="stat"><div class="n" data-count="2">0</div><div class="l">常用语言：威尔士语与英语</div></div>
+          <div class="stat"><div class="n" data-count="4">0</div><div class="l">处世界遗产</div></div>
+        </div>
+
+        <div class="reveal" style="margin-top:90px">
+          <div class="eyebrow">Choose Your Wales</div>
+          <h2 class="h2 serif">选择你的威尔士</h2>
+          <p class="lead">同类风景已经为你收集成册，点进任意一个主题，再慢慢查看其中的每一处风景。</p>
+        </div>
+        <div class="region-grid">${regionCards}</div>
+
+        ${mapHTML()}
+
+        <div class="reveal" style="margin-top:100px">
+          <div class="eyebrow">Highlights</div>
+          <h2 class="h2 serif">不可错过的风景</h2>
+        </div>
+        <div class="spot-grid">${featured}</div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap reveal">
+        <div class="eyebrow">Wales at a Glance</div>
+        <h2 class="serif">认识威尔士</h2>
+        <p>威尔士把山地、海岸、城镇与历史文化浓缩在一段适合慢慢探索的旅程里。首都加的夫（51.4816°N, 3.1791°W）是认识这个国家的起点：城市、海岸与文化可以在一段慢旅行中相遇。</p>
+        <div class="info-grid">
+          <div class="info-card"><div class="ph"><img src="${IMG.bay}" alt="加的夫湾"></div><h4 class="serif">首都 · 加的夫</h4><p>城堡、海湾与千年艺术中心，从这里开始认识威尔士。</p><a class="more" href="#/spot/cardiff">查看城市详情 →</a></div>
+          <div class="info-card"><div class="ph"><img src="${IMG.holyhead}" alt="霍利黑德港"></div><h4 class="serif">门户 · 霍利黑德</h4><p>从爱尔兰渡轮抵达的第一站，把行程交给海岸线。</p><a class="more" href="#/arrival/from-ireland">查看抵达方式 →</a></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="view" id="view-language">
-  <div class="sub-hero">
-    <div class="sub-hero-bg" style="background-image:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Evp0bUcexoE5y1xUR3bcUPx3nsd')"></div>
-    <div class="sub-hero-inner">
-      <div class="crumb"><a href="#home">首页</a> / 威尔士语</div>
-      <h1 class="serif">威尔士语：生生不息的凯尔特回音</h1>
-      <p class="sub">Cymraeg，欧洲现存最古老的活语言之一，至今仍有数十万人将它作为日常交流的语言。</p>
-    </div>
-  </div>
-  <div class="prose">
-    <p>在 Abergavenny（Y Fenni）、Monmouth（Trefynwy）这些路边的绿色双语路牌上，英文与威尔士文并排出现。这不是装饰，而是威尔士日常生活的真实写照——根据 2021 年人口普查，约 <strong>29.5%</strong> 的威尔士人（约 89 万人）能使用威尔士语。</p>
-    <p>作为凯尔特语族的一员，威尔士语的历史可以追溯到罗马时代的布立吞语。它曾一度因教育体系独尊英语而式微，甚至在学校里说威尔士语会被惩戒；但 20 世纪的语言复兴运动、威尔士语电视台 S4C 的开播，以及 1993 年《威尔士语言法案》的通过，让它重新回到街头、学校与政府公文之中。</p>
-    <div class="pull">"Nid iaith yn unig yw hi — mae hi'n ffordd o fyw."<br>它不只是一门语言，更是一种生活方式。</div>
-    <h2>在旅途中听一听它</h2>
-    <p>不必害怕不懂威尔士语——英语在威尔士全国通行无阻。但学几句简单的寒暄，会让当地人立刻露出笑容：</p>
-    <div class="facts">
-      <div class="fact"><div class="k">你好</div><div class="v">Shwmae（休迈）</div></div>
-      <div class="fact"><div class="k">谢谢</div><div class="v">Diolch（迪奥赫）</div></div>
-      <div class="fact"><div class="k">威尔士</div><div class="v">Cymru（康姆瑞）</div></div>
-      <div class="fact"><div class="k">干杯</div><div class="v">Iechyd da（耶赫伊兹·达）</div></div>
-    </div>
-  </div>
-  <div class="sub-nav">
-    <a href="#home">← 首页</a>
-    <a href="#language" class="active">威尔士语</a>
-    <a href="#castles">城堡与博物馆</a>
-    <a href="#roots">寻根</a>
-    <a href="#david">圣大卫日</a>
-  </div>
-</section>
-
-<section class="view" id="view-castles">
-  <div class="sub-hero">
-    <div class="sub-hero-bg" style="background-image:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RUgkbYymeobkYpxukdWcNDy1nXg')"></div>
-    <div class="sub-hero-inner">
-      <div class="crumb"><a href="#home">首页</a> / 城堡与博物馆</div>
-      <h1 class="serif">九十余座时光殿堂</h1>
-      <p class="sub">从列入世界遗产的 Conwy 城堡，到星罗棋布的博物馆，威尔士把两千年历史静静陈列在你眼前。</p>
-    </div>
-  </div>
-  <div class="prose">
-    <p>威尔士被称为"城堡之国"——在这个仅 2 万多平方公里的土地上，至今仍存留着超过 600 座城堡遗址。其中最负盛名的，是 13 世纪末英格兰国王爱德华一世为征服威尔士而修建的"铁环"。</p>
-    <p>位于北部海岸的 <strong>Conwy（康威）城堡</strong>八座塔楼并肩而立，横跨河口的中世纪城墙至今完整，是欧洲保存最完好的中世纪防御工事之一。与它一同列入世界遗产的，还有 Caernarfon、Harlech 与 Beaumaris 三座城堡——它们合称为"爱德华一世的城堡与城墙"。</p>
-    <div class="pull">在威尔士，平均每 33 平方公里就有一座城堡。</div>
-    <h2>博物馆里的威尔士</h2>
-    <p>除了城堡，威尔士还有九十余座官方注册的博物馆。它们有的讲述斯旺西的铜业与梅瑟蒂德菲尔的钢铁史，有的陈列 Dylan Thomas 与 R. S. Thomas 的文学手稿，有的则把工业革命时期的运煤铁路完整保留下来。</p>
-    <div class="facts">
-      <div class="fact"><div class="k">代表城堡</div><div class="v">Conwy / Caernarfon / Harlech</div></div>
-      <div class="fact"><div class="k">世界遗产</div><div class="v">4 处（含城堡群、板岩景观等）</div></div>
-      <div class="fact"><div class="k">国家博物馆</div><div class="v">Amgueddfa Cymru</div></div>
-      <div class="fact"><div class="k">门票</div><div class="v">多数国家博物馆对公众免费开放</div></div>
-    </div>
-  </div>
-  <div class="sub-nav">
-    <a href="#home">← 首页</a>
-    <a href="#language">威尔士语</a>
-    <a href="#castles" class="active">城堡与博物馆</a>
-    <a href="#roots">寻根</a>
-    <a href="#david">圣大卫日</a>
-  </div>
-</section>
-
-<section class="view" id="view-roots">
-  <div class="sub-hero">
-    <div class="sub-hero-bg" style="background-image:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BLveb9O50oxBrFxVNfGcTCN1nVh')"></div>
-    <div class="sub-hero-inner">
-      <div class="crumb"><a href="#home">首页</a> / 寻根之旅</div>
-      <h1 class="serif">寻根之旅：血脉的威尔士印记</h1>
-      <p class="sub">数以百万计的威尔士后裔散居世界各地——也许你的家族姓氏背后，正藏着一段威尔士的往事。</p>
-    </div>
-  </div>
-  <div class="prose">
-    <p>19 世纪的工业繁荣与随后的萧条，驱使大批威尔士人跨越大西洋，前往美国宾夕法尼亚州、加拿大新斯科舍、阿根廷巴塔哥尼亚，乃至新西兰。今天，全球自称有威尔士血统的人，已达数千万之众。</p>
-    <p>如果你怀疑自己的家族与威尔士有关，这里有几条线索可以追寻：姓氏中常见的 <strong>Williams、Davies、Jones、Evans、Morgan</strong> 都源自威尔士；而 <strong>Llanfair、Abergavenny</strong> 这类地名前缀（"Llan-" 意为"教堂"，"Aber-" 意为"河口"，"Pen-" 意为"山顶"），往往直接指向祖辈居住过的村庄。</p>
-    <div class="pull">走进祖辈曾做礼拜的那座小教堂，在教区登记簿上找到自己姓氏的那一刻，时间会忽然短路。</div>
-    <h2>从哪里开始查？</h2>
-    <p>威尔士国家图书馆（National Library of Wales）位于阿伯里斯特威斯，保存了完整的教区洗礼、婚姻与埋葬记录，以及大量 19 世纪移民档案。当地的家谱中心（Genealogy Centres）有专人协助查阅，许多乡村教堂至今仍保存着自 16 世纪以来的教会登记簿。</p>
-    <div class="facts">
-      <div class="fact"><div class="k">主要寻根机构</div><div class="v">National Library of Wales</div></div>
-      <div class="fact"><div class="k">海外聚居地</div><div class="v">宾夕法尼亚 · 新斯科舍 · 巴塔哥尼亚</div></div>
-      <div class="fact"><div class="k">常见姓氏</div><div class="v">Williams / Davies / Jones / Evans</div></div>
-      <div class="fact"><div class="k">地名线索</div><div class="v">Llan-（教堂）· Aber-（河口）</div></div>
-    </div>
-  </div>
-  <div class="sub-nav">
-    <a href="#home">← 首页</a>
-    <a href="#language">威尔士语</a>
-    <a href="#castles">城堡与博物馆</a>
-    <a href="#roots" class="active">寻根</a>
-    <a href="#david">圣大卫日</a>
-  </div>
-</section>
-
-<section class="view" id="view-david">
-  <div class="sub-hero">
-    <div class="sub-hero-bg" style="background-image:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/HI5ebwBvHobo3hxZrEncxzQAnie')"></div>
-    <div class="sub-hero-inner">
-      <div class="crumb"><a href="#home">首页</a> / 圣大卫日</div>
-      <h1 class="serif">圣大卫日：水仙与红龙的春之颂</h1>
-      <p class="sub">每年 3 月 1 日，威尔士人襟佩水仙与韭葱，走上街头，用一场盛大游行庆祝他们的主保圣人。</p>
-    </div>
-  </div>
-  <div class="prose">
-    <p>圣大卫（St. David / Dewi Sant）是 6 世纪一位在威尔士西部传教的主教，他在今天的圣戴维斯城（St Davids）建立了一座修道院。他一生简朴，据说只喝水与面包，临终前对弟子说："<em>Gwnewch y pethau bychain</em>"——"持守那些微小的事"。</p>
-    <p>每年 3 月 1 日，威尔士全境纪念这位主保圣人。这一天，人们襟佩两朵象征威尔士的花：春天最早绽放的<strong>黄水仙</strong>，以及味道浓烈的<strong>韭葱</strong>（传说圣大卫曾让士兵在帽上插韭葱，以便在战场上区分敌我）。儿童会穿上传统民族服饰——黑色斗篷、白色尖顶帽，走上街头参加游行与合唱。</p>
-    <div class="pull">红龙（Y Ddraig Goch）在威尔士国旗上腾飞已有数百年，它象征着这片土地永不屈服的精神。</div>
-    <h2>这一天该怎么过？</h2>
-    <p>首府加的夫（Cardiff）会举办全国规模最大的游行与音乐会；在乡村，人们则会围坐在一起，吃传统的<strong>可可汤（cawl）</strong>，唱威尔士国歌《父辈的土地》（<em>Hen Wlad Fy Nhadau</em>）。如果你三月初到访威尔士，请一定加入街头的合唱——这里没有人会因为你不会威尔士语而拒绝你。</p>
-    <div class="facts">
-      <div class="fact"><div class="k">日期</div><div class="v">每年 3 月 1 日</div></div>
-      <div class="fact"><div class="k">国花</div><div class="v">黄水仙 daffodil</div></div>
-      <div class="fact"><div class="k">传统饰物</div><div class="v">韭葱 leek · 红龙旗</div></div>
-      <div class="fact"><div class="k">传统食物</div><div class="v">Cawl（威尔士炖汤）</div></div>
-    </div>
-  </div>
-  <div class="sub-nav">
-    <a href="#home">← 首页</a>
-    <a href="#language">威尔士语</a>
-    <a href="#castles">城堡与博物馆</a>
-    <a href="#roots">寻根</a>
-    <a href="#david" class="active">圣大卫日</a>
-  </div>
-</section>
-
-<section class="view" id="view-wool">
-  <div class="sub-hero">
-    <div class="sub-hero-bg" style="background-image:url('https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FGDpby72xofWULx8IuIcB1l4nHd')"></div>
-    <div class="sub-hero-inner">
-      <div class="crumb"><a href="#home">首页</a> / 羊毛与纺织工艺</div>
-      <h1 class="serif">羊毛史诗：织机上的岁月经纬</h1>
-      <p class="sub">从深谷里水力驱动的斑驳磨坊，到今天的独立工坊，威尔士羊毛曾温暖整个大英帝国。</p>
-    </div>
-  </div>
-  <div class="prose">
-    <p>威尔士多山、湿润、青草丰美，自古就是牧羊的天堂。中世纪晚期至工业革命初期，羊毛与毛纺是威尔士中部与北部山区的经济支柱——从 Snowdonia 到 Brecon Beacons，深谷里随处可见水力驱动的磨坊，把当地羊毛纺成致密耐用的布料。</p>
-    <p>你看到的这种红、白、黑相间的菱形提花纹样，是威尔士传统毛毯（<em>Welsh tapestry blanket</em>）的经典图案。它曾是普通威尔士家庭的传家宝，盖在床尾、披在膝头，陪伴一代人度过阴冷潮湿的冬夜。</p>
-    <div class="pull">在威尔士，"一块好羊毛毯"不是商品，而是家族的记忆容器。</div>
-    <h2>今天的羊毛工艺</h2>
-    <p>今天，传统磨坊大多已改为博物馆，但一批独立工坊仍在延续古老的提花技艺。你可以在中部的 Cambrian Mountains 参加"羊驼徒步"或羊毛工作坊，亲眼看到一团原毛如何经过洗涤、梳理、染色、纺线、上机，最终变成一块带着几何纹样的毛毯。</p>
-    <div class="facts">
-      <div class="fact"><div class="k">传统纹样</div><div class="v">菱形提花 · 红黑白经典配色</div></div>
-      <div class="fact"><div class="k">历史产区</div><div class="v">斯诺登尼亚 · 坎布里安山脉</div></div>
-      <div class="fact"><div class="k">可体验</div><div class="v">羊毛工坊参观 · 羊驼徒步</div></div>
-      <div class="fact"><div class="k">最佳购买地</div><div class="v">Cardigan 传统毛纺合作社</div></div>
-    </div>
-  </div>
-  <div class="sub-nav">
-    <a href="#home">← 首页</a>
-    <a href="#language">威尔士语</a>
-    <a href="#castles">城堡与博物馆</a>
-    <a href="#roots">寻根</a>
-    <a href="#david">圣大卫日</a>
-  </div>
-</section>
-
-<section class="cta">
-  <h2 class="serif">威尔士的故事，等你来读</h2>
-  <p>本页为 Visit Wales 英国威尔士旅游局官网"历史与传统"板块的中文本地化版本。更多交通、天气、海岸与安全信息，请前往官方网站。</p>
-  <a class="btn" style="background:var(--gold-soft);color:#fff" href="https://www.visitwales.com/info" target="_blank" rel="noopener">前往 Visit Wales 原文 ↗</a>
-</section>
-
-<button class="to-top" id="toTop">↑</button>
-
-<script>
-var routes={home:'view-home',language:'view-language',castles:'view-castles',roots:'view-roots',david:'view-david',wool:'view-wool'};
-function go(){
-  var h=(location.hash||'#home').replace('#','');
-  if(!routes[h])h='home';
-  document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
-  document.getElementById(routes[h]).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(function(a){
-    a.classList.toggle('active',a.getAttribute('data-nav')===h);
-  });
-  window.scrollTo(0,0);
-  refreshReveal();
+    ${arrivalSectionHTML()}
+    ${safetySectionHTML()}
+    ${footerHTML()}
+  </div>`;
 }
-window.addEventListener('hashchange',go);
-var nav=document.getElementById('nav');
-window.addEventListener('scroll',function(){
-  if(scrollY>60)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
-  if(scrollY>500)document.getElementById('toTop').classList.add('show');
-  else document.getElementById('toTop').classList.remove('show');
-},{passive:true});
-document.getElementById('toTop').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
-var io;
-function refreshReveal(){
+
+function mapHTML(){
+  const pins=[
+    {id:'menai',x:105,y:88,c:'#C9A961',label:'梅奈悬索桥'},
+    {id:'stack',x:52,y:62,c:'#C9A961',label:'南斯塔克灯塔'},
+    {id:'beaumaris',x:95,y:68,c:'#C9A961',label:'博马里斯城堡'},
+    {id:'parys',x:70,y:48,c:'#C9A961',label:'帕里斯山'},
+    {id:'conwy',x:210,y:82,c:'#B5533B',label:'康威城堡'},
+    {id:'caernarfon',x:130,y:100,c:'#B5533B',label:'卡那封城堡'},
+    {id:'david',x:90,y:360,c:'#B5533B',label:'圣大卫大教堂'},
+    {id:'snowdon',x:145,y:145,c:'#3A6B4A',label:'斯诺登尼亚'},
+    {id:'sheep',x:180,y:175,c:'#3A6B4A',label:'山间牧道'},
+    {id:'cottage',x:125,y:185,c:'#3A6B4A',label:'斯诺登石屋'},
+    {id:'pembroke',x:110,y:340,c:'#4A7FA5',label:'彭布罗克海岸'},
+    {id:'cardiff',x:240,y:365,c:'#4A7FA5',label:'加的夫'},
+    {id:'train',x:195,y:245,c:'#4A7FA5',label:'窄轨蒸汽火车'}
+  ];
+  const pinSVG=pins.map(p=>`
+    <a href="#/spot/${p.id}" class="map-pin">
+      <circle cx="${p.x}" cy="${p.y}" r="7" fill="${p.c}"/>
+      <text x="${p.x+12}" y="${p.y+4}">${p.label}</text>
+      <title>${p.label}（点击查看详情）</title>
+    </a>`).join('');
+  return `
+  <div class="reveal" style="margin-top:90px">
+    <div class="eyebrow">Explore Map</div>
+    <h2 class="h2 serif">探索地图 · 一图看尽威尔士</h2>
+    <p class="lead">13 处风景已标注在地图上，点击任意标记，即可直达该景点的中文详情。</p>
+  </div>
+  <div class="map-wrap reveal">
+    <svg class="map-svg" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
+      <rect class="map-sea" width="360" height="480" rx="16"/>
+      <path class="map-land" d="M 55 40 C 40 45, 35 60, 45 72 C 55 82, 80 85, 100 78 C 115 72, 118 55, 105 45 C 90 38, 68 36, 55 40 Z"/>
+      <path class="map-land" d="M 280 60 C 250 45, 210 40, 180 50 C 150 55, 130 48, 110 60 C 90 70, 80 85, 75 105 C 65 130, 55 155, 50 185 C 42 220, 38 255, 45 290 C 48 310, 40 330, 55 355 C 70 375, 95 385, 125 388 C 160 390, 195 385, 225 375 C 255 365, 275 345, 285 320 C 295 290, 298 255, 295 220 C 292 185, 290 150, 288 115 C 287 90, 285 72, 280 60 Z"/>
+      ${pinSVG}
+    </svg>
+    <div class="map-legend">
+      <span><i style="background:#C9A961"></i>安格尔西海岛</span>
+      <span><i style="background:#B5533B"></i>城堡与古堡</span>
+      <span><i style="background:#3A6B4A"></i>山地与旷野</span>
+      <span><i style="background:#4A7FA5"></i>海岸与海岬</span>
+    </div>
+  </div>`;
+}
+
+function arrivalSectionHTML(){
+  const cards=[
+    {img:IMG.conwy, t:'从英国各地抵达', p:'公路、铁路与航班皆可抵达，铁路线贯穿南北，联结主要城镇。', anchor:'from-uk'},
+    {img:IMG.bay, t:'从海外抵达', p:'可直飞加的夫，或经伦敦、曼彻斯特等枢纽转乘入境。', anchor:'from-overseas'},
+    {img:IMG.train, t:'境内移动', p:'火车、巴士、自驾与徒步，风景铁路把交通本身变成旅程。', anchor:'local-move'},
+    {img:IMG.holyhead, t:'从爱尔兰抵达', p:'都柏林至霍利黑德每日渡轮，可携车和行李，约 3 小时。', anchor:'from-ireland'}
+  ].map(c=>`<div class="info-card"><div class="ph"><img src="${c.img}" alt="${c.t}"></div><h4 class="serif">${c.t}</h4><p>${c.p}</p><a class="more" href="#/arrival/${c.anchor}">阅读详情 →</a></div>`).join('');
+  return `
+  <section class="dark" id="arrival">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Getting Here</div>
+        <h2 class="serif">抵达威尔士，<br>记得为天气留一层</h2>
+        <p>威尔士交通四通八达，可从英国本土搭乘公路、铁路或航班抵达；国际游客可经英国各大机场换乘铁路网络进入威尔士。山地与海岸天气变化快，出发前查看预报，带上防水外套与可叠穿衣物。</p>
+      </div>
+      <div class="info-grid">${cards}</div>
+    </div>
+  </section>`;
+}
+
+function safetySectionHTML(){
+  return `
+  <section class="section" id="safety">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Travel Safe</div>
+        <h2 class="h2 serif">把准备做好，让风景尽兴</h2>
+        <p class="lead">出发前查看天气和路线，带上充满电的手机及离线地图；穿合脚的步行鞋，准备保暖层和防水外套。山地天气变化快，选择适合自身经验的路线，沿标识步道行走。</p>
+        <div class="safe-cards">
+          <a class="safe-card" href="#/safety/mountain">
+            <div class="bg" style="background-image:url('${IMG.snowdon}')"></div>
+            <div><div class="lbl">山地天气多变</div><div class="sub">出发前查预报 · 分层穿着</div></div>
+          </a>
+          <a class="safe-card" href="#/safety/coast">
+            <div class="bg" style="background-image:url('${IMG.pembroke}')"></div>
+            <div><div class="lbl">海岸读懂潮汐</div><div class="sub">注意离岸流 · 红黄旗之间</div></div>
+          </a>
+          <a class="safe-card" href="#/safety/emergency">
+            <div class="bg" style="background-image:url('${IMG.stack}')"></div>
+            <div><div class="lbl">遇险拨 999 / 112</div><div class="sub">海岸警卫队 · 勿贸然下水</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top:70px">
+        <h3 class="serif" style="font-size:1.7rem;color:var(--green);margin-bottom:12px">亲近海岸，也要读懂海况</h3>
+        <p class="lead">潮汐、离岸流与突变海况都可能带来风险。下水前看现场旗帜和安全告示，优先选择有救生员巡护的海滩。若被离岸流带离，保持冷静，平行岸边游动并举手呼救。</p>
+        <div class="alert"><strong>遇险请拨 999 或 112</strong>，要求接通海岸警卫队 Coastguard。发现他人遇险时不要贸然下水，先呼救并抛出可漂浮物。</div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function footerHTML(){
+  return `
+  <footer class="footer">
+    <div class="wrap">
+      <div class="r">班级：合办2402班　|　组员：龙文辉，刘昱飞，陈展熙</div>
+      <div class="r">资料来源：<a href="https://www.visitwales.com/info" target="_blank" rel="noopener">Visit Wales · Info</a>　·　威尔士概况　·　旅行安全　·　海岸安全　·　RNLI 海滩安全</div>
+    </div>
+  </footer>`;
+}
+
+function regionView(id){
+  const r=getRegion(id);
+  if(!r)return notFoundView();
+  const list=spotsInRegion(id).map(s=>`
+    <a class="spot-card" href="#/spot/${s.id}">
+      <div class="ph"><img src="${s.img}" alt="${s.name}"><span class="tag">${s.tag}</span></div>
+      <div class="bd">
+        <div class="en">${s.en}</div>
+        <h4 class="serif">${s.name}</h4>
+        <p>${s.summary}</p>
+        <span class="go">查看详情 <span class="arr">→</span></span>
+      </div>
+    </a>`).join('');
+  return `
+  <div class="view active" data-view="region">
+    <header class="subhead">
+      <div class="bg" style="background-image:url('${r.img}')"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="#/">首页</a> / <a href="#/" data-scroll="regions">景点</a> / ${r.name}</div>
+        <h1 class="serif">${r.name}</h1>
+        <div class="en">${r.en}</div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="wrap">
+        <div class="reveal"><p class="lead">${r.desc}</p></div>
+        <div class="spot-grid">${list}</div>
+        <div class="reveal" style="margin-top:50px">
+          <a class="back-btn" href="#/" data-scroll="regions">← 返回所有主题</a>
+        </div>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+function spotView(id){
+  const s=getSpot(id);
+  if(!s)return notFoundView();
+  const r=getRegion(s.region);
+  const facts=s.facts.map(f=>`<div class="row"><span class="k">${f[0]}</span><span class="v">${f[1]}</span></div>`).join('');
+  const body=s.body.map(p=>`<p>${p}</p>`).join('');
+  const galleryPool = spotsInRegion(s.region).filter(x=>x.id!==s.id).slice(0,3);
+  const gal = galleryPool.length? `<div class="gallery">${galleryPool.map(x=>`<a class="g" href="#/spot/${x.id}"><img src="${x.img}" alt="${x.name}"></a>`).join('')}</div>`:'';
+  const crossPool = REGIONS.filter(rg=>rg.id!==s.region).map(rg=>spotsInRegion(rg.id)[0]).filter(Boolean).slice(0,3);
+  const cross = crossPool.map(x=>`
+    <a class="spot-card" href="#/spot/${x.id}">
+      <div class="ph"><img src="${x.img}" alt="${x.name}"><span class="tag">${x.tag}</span></div>
+      <div class="bd"><div class="en">${x.en}</div><h4 class="serif">${x.name}</h4><span class="go">查看详情 <span class="arr">→</span></span></div>
+    </a>`).join('');
+  return `
+  <div class="view active" data-view="spot">
+    <header class="subhead">
+      <div class="bg" style="background-image:url('${s.img}')"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="#/">首页</a> / <a href="#/region/${r.id}">${r.name}</a> / ${s.name}</div>
+        <h1 class="serif">${s.name}</h1>
+        <div class="en">${s.en}</div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="wrap">
+        <a class="back-btn" href="#/region/${r.id}">← 返回${r.name}</a>
+        <div class="detail">
+          <div class="main reveal">
+            <p style="font-size:1.2rem;color:var(--green);font-weight:500;font-family:'Noto Serif SC',serif;line-height:1.9">${s.summary}</p>
+            ${body}
+            <blockquote>${s.quote}</blockquote>
+            ${gal}
+          </div>
+          <aside class="facts reveal">
+            <h4 class="serif">实用信息</h4>
+            ${facts}
+            <a class="btn" href="https://www.visitwales.com/info" target="_blank" rel="noopener">前往 Visit Wales 官网</a>
+          </aside>
+        </div>
+        <div class="nearby reveal">
+          <h3 class="serif">探索更多 · 换个方向</h3>
+          <div class="spot-grid">${cross}</div>
+        </div>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+const ARTICLES = {
+  'from-uk': {
+    cat:'arrival', catName:'抵达与气候', title:'从英国各地抵达', en:'Arriving from the UK',
+    img:IMG.conwy,
+    lead:'威尔士与英格兰陆地相连，公路、铁路四通八达——从伦敦到加的夫最快只需两小时，一路山海相伴。',
+    paras:[
+      'M4 高速公路沿南威尔士海岸延伸，把伦敦、布里斯托尔与加的夫、斯旺西连成一线；A55 则横贯北威尔士，从切斯特出发，经康威、班戈直达霍利黑德港口，沿途就是海岸线风景。',
+      '铁路方面，Great Western Railway 运营伦敦 Paddington 至加的夫、斯旺西一线，车程约 2 小时；Transport for Wales 则覆盖威尔士境内及通往曼彻斯特、伯明翰的线路。从伦敦 Euston 到霍利黑德约 3.5 小时，可衔接爱尔兰渡轮。',
+      '建议提前在 Trainline 或运营商官网购票，off-peak 时段票价更宽松、车厢更空。若计划多日乘火车，可考虑 Railcard 折扣卡。'
+    ],
+    facts:[['伦敦→加的夫','火车约 2 小时'],['主要高速','M4 / A55'],['铁路运营商','GWR · TfW'],['购票建议','提前订更便宜'],['最佳抵达站','加的夫中央 / 霍利黑德']],
+    related:['conwy','cardiff','train']
+  },
+  'from-overseas': {
+    cat:'arrival', catName:'抵达与气候', title:'从海外抵达', en:'Arriving from Overseas',
+    img:IMG.bay,
+    lead:'加的夫机场是威尔士的空中门户，长途旅客也可经伦敦、曼彻斯特等枢纽转乘铁路入境，一路向南。',
+    paras:[
+      '加的夫机场（CWL）位于城市西南，有往返欧洲主要城市及爱尔兰都柏林的航班。机场有直达加的夫中央火车站的巴士，约 40 分钟。',
+      '来自亚洲、北美等地的长途旅客通常飞抵伦敦希思罗、盖特威克或曼彻斯特机场，再换乘铁路或租车进入威尔士。希思罗到伦敦 Paddington 约 15 分钟，再转火车前往加的夫。',
+      '若行李较多或计划环岛自驾，在机场租车是最灵活的选择；英国靠左行驶，高速公路服务区密集，注意提前规划加油与休息。'
+    ],
+    facts:[['国家机场','加的夫 CWL'],['长途枢纽','希思罗 · 曼彻斯特'],['机场到市区','巴士约 40 分钟'],['租车提示','靠左行驶'],['入境证件','护照 / 签证按国籍']],
+    related:['cardiff','conwy','pembroke']
+  },
+  'local-move': {
+    cat:'arrival', catName:'抵达与气候', title:'境内如何移动', en:'Getting Around Wales',
+    img:IMG.train,
+    lead:'在威尔士，交通本身就是旅程的一部分——风景铁路、海岸公路与山间步道，每一种移动方式都有不同风景。',
+    paras:[
+      '南威尔士城市与山谷之间铁路、巴士密集，通勤便利；北威尔士海岸线最适合自驾，A55 一路串联切斯特、康威与霍利黑德，窗外就是爱尔兰海。',
+      '斯诺登尼亚与彭布罗克海岸更推荐自驾或搭乘风景铁路：Heart of Wales 线穿越中部山谷，Cambrian Coast 线沿海岸行驶，Conwy Valley 线深入斯诺登尼亚腹地，这些线路本身就是景点。',
+      'National Express 与 Megabus 提供连接主要城市的长途巴士。山区与海岸步道沿线巴士班次较少，部分线路仅在夏季或周末运行，出发前务必查好时刻表。'
+    ],
+    facts:[['风景铁路','Heart of Wales · Cambrian Coast'],['长途巴士','National Express · Megabus'],['自驾推荐','北威尔士海岸 A55'],['山区巴士','班次少，提前查时刻'],['徒步','沿标识步道行走']],
+    related:['train','snowdon','conwy']
+  },
+  'from-ireland': {
+    cat:'arrival', catName:'抵达与气候', title:'从爱尔兰抵达', en:'Arriving from Ireland',
+    img:IMG.holyhead,
+    lead:'都柏林到霍利黑德的渡轮每日开行，可携车登船，三小时后便踏上威尔士的海岸公路。',
+    paras:[
+      '都柏林至霍利黑德有 Irish Ferries 与 Stena Line 两家运营，每日多班，航程约 3 小时，可载车与乘客。霍利黑德港下船即接 A55 公路，铁路也直达伦敦。',
+      '此外，罗斯莱尔至菲什加德、彭布罗克也有渡轮航线，适合从爱尔兰南部出发的旅客。都柏林至加的夫还有约 1 小时的直飞航班，适合不带车的短途旅行。',
+      '渡轮票价随季节波动，夏季与周末建议提前预订。携车登船需提前到达港口办理手续，船上有餐饮、休息区与免费 Wi-Fi。'
+    ],
+    facts:[['主要航线','都柏林→霍利黑德'],['航程','约 3 小时'],['运营公司','Irish Ferries · Stena Line'],['其他航线','罗斯莱尔→菲什加德'],['直飞','都柏林→加的夫约 1 小时']],
+    related:['stack','menai','beaumaris']
+  },
+  'mountain': {
+    cat:'safety', catName:'安全提示', title:'山地安全', en:'Mountain Safety',
+    img:IMG.snowdon,
+    lead:'威尔士山地天气变化快，上一秒阳光、下一秒起雾——对山的敬畏，是平安归来的前提。',
+    paras:[
+      '出发前务必查看山地天气预报（MWIS 或 Met Office 山地区域预报），并选择适合自身体力与经验的路线。斯诺登尼亚部分路线涉及攀爬与裸露山脊，不适合初学者。',
+      '随身携带：防水外套、保暖层、足够的食物与饮水、地图或离线导航、头灯、急救包。手机在山区信号可能很弱，不要完全依赖电子设备。',
+      '沿标识步道行走，不要独自进入未开发区域；把行程告知同行者或住宿处，约定返回时间。遇到大雾、大风或降雨应及时下撤，不要勉强按原计划登顶。'
+    ],
+    facts:[['天气查询','MWIS 山地预报'],['必带装备','防水 · 保暖 · 头灯'],['信号','山区可能无信号'],['徒步原则','沿标识，不独行'],['遇险','999 转山地救援']],
+    related:['snowdon','sheep','cottage']
+  },
+  'coast': {
+    cat:'safety', catName:'安全提示', title:'海岸安全', en:'Coast Safety',
+    img:IMG.pembroke,
+    lead:'潮汐与离岸流看似平静，却能在几分钟内改变处境——读懂海况，才能安心亲近海岸。',
+    paras:[
+      '出发前查询潮汐时间，避免在涨潮时被海水困在礁石、海湾或潮汐岛上。威尔士海岸潮差可达数米，部分步道仅在退潮时可通行。',
+      '游泳优先选择有救生员巡护、悬挂红黄双色旗帜的海滩，并在旗帜之间的区域活动。不要在无人值守的海湾独自下水，尤其注意离岸流。',
+      '若被离岸流带离岸边，保持冷静、节省体力，不要逆流游回；应平行于岸边游动，脱离离岸流后再向岸，并举手呼救。'
+    ],
+    facts:[['潮汐查询','EasyTide / RNLI'],['安全海滩','红黄旗之间'],['离岸流','平行岸边游'],['礁石','注意涨潮被困'],['救生员','夏季主要海滩']],
+    related:['pembroke','stack','david']
+  },
+  'emergency': {
+    cat:'safety', catName:'安全提示', title:'紧急联络', en:'Emergency Contact',
+    img:IMG.stack,
+    lead:'记住 999 与 112，遇险时冷静说明位置与需求——一通电话，就是山与海之间最可靠的后盾。',
+    paras:[
+      '英国通用紧急号码为 999 或 112，接通后说明需要警察、救护车、消防或海岸警卫队（Coastguard）。在山区遇险可要求转接山地救援（Mountain Rescue）。',
+      '报告位置时尽量提供：所在地名、最近的道路或地标、人员数量与伤情、天气状况。若在海岸，说明海滩名称、潮汐情况与是否有人落水。',
+      '发现他人遇险时，不要贸然下水——应大声呼救、拨打 999，并向落水者抛出浮力器具、绳索或伸出长杆。岸上协助比盲目下水更安全有效。'
+    ],
+    facts:[['紧急号码','999 / 112'],['海岸警卫队','Coastguard'],['山地救援','Mountain Rescue'],['报告要素','位置 · 人数 · 伤情'],['施救原则','先呼救，勿贸然下水']],
+    related:['pembroke','snowdon','conwy']
+  }
+};
+
+function articleView(id){
+  const a=ARTICLES[id];
+  if(!a)return notFoundView();
+  const facts=a.facts.map(f=>`<div class="row"><span class="k">${f[0]}</span><span class="v">${f[1]}</span></div>`).join('');
+  const paras=a.paras.map(p=>`<p>${p}</p>`).join('');
+  const related=a.related.map(rid=>{
+    const s=getSpot(rid);
+    if(!s)return '';
+    return `<a class="spot-card" href="#/spot/${s.id}"><div class="ph"><img src="${s.img}" alt="${s.name}"><span class="tag">${s.tag}</span></div><div class="bd"><div class="en">${s.en}</div><h4 class="serif">${s.name}</h4><span class="go">查看详情 <span class="arr">→</span></span></div></a>`;
+  }).join('');
+  const backHash=a.cat==='arrival'?'#/arrival':'#/safety';
+  return `
+  <div class="view active" data-view="article">
+    <header class="subhead">
+      <div class="bg" style="background-image:url('${a.img}')"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="#/">首页</a> / <a href="${backHash}">${a.catName}</a> / ${a.title}</div>
+        <h1 class="serif">${a.title}</h1>
+        <div class="en">${a.en}</div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="wrap">
+        <a class="back-btn" href="${backHash}">← 返回${a.catName}</a>
+        <div class="detail">
+          <div class="main reveal">
+            <p style="font-size:1.2rem;color:var(--green);font-weight:500;font-family:'Noto Serif SC',serif;line-height:1.9">${a.lead}</p>
+            ${paras}
+          </div>
+          <aside class="facts reveal">
+            <h4 class="serif">实用信息</h4>
+            ${facts}
+          </aside>
+        </div>
+        <div class="nearby reveal">
+          <h3 class="serif">相关风景</h3>
+          <div class="spot-grid">${related}</div>
+        </div>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+function arrivalLanding(){
+  const items=['from-uk','from-overseas','local-move','from-ireland'].map(id=>{
+    const a=ARTICLES[id];
+    return `<a class="info-card" href="#/arrival/${id}"><div class="ph"><img src="${a.img}" alt="${a.title}"></div><h4 class="serif">${a.title}</h4><p>${a.lead}</p><span class="more">阅读详情 →</span></a>`;
+  }).join('');
+  return `
+  <div class="view active" data-view="arrival">
+    <header class="subhead">
+      <div class="bg" style="background-image:url('${IMG.train}')"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="#/">首页</a> / 抵达与气候</div>
+        <h1 class="serif">抵达与气候</h1>
+        <div class="en">Getting Here & Around</div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="wrap">
+        <p class="lead reveal">威尔士交通四通八达，从英国本土、海外或爱尔兰皆可便捷抵达；境内火车、巴士、自驾与风景铁路各有风味。选择一个方向，开始你的行程规划。</p>
+        <div class="info-grid">${items}</div>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+function safetyLanding(){
+  const items=['mountain','coast','emergency'].map(id=>{
+    const a=ARTICLES[id];
+    return `<a class="info-card" href="#/safety/${id}"><div class="ph"><img src="${a.img}" alt="${a.title}"></div><h4 class="serif">${a.title}</h4><p>${a.lead}</p><span class="more">阅读详情 →</span></a>`;
+  }).join('');
+  return `
+  <div class="view active" data-view="safety">
+    <header class="subhead">
+      <div class="bg" style="background-image:url('${IMG.snowdon}')"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="#/">首页</a> / 安全提示</div>
+        <h1 class="serif">安全提示</h1>
+        <div class="en">Travel Safe</div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="wrap">
+        <p class="lead reveal">山地与海岸各有风险，充分准备才能尽兴而归。以下三个方向，覆盖了威尔士旅行最常见的安全场景。</p>
+        <div class="info-grid">${items}</div>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+function notFoundView(){
+  return `<div class="view active" data-view="404">
+    <section class="section" style="min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center">
+      <div>
+        <div class="eng" style="font-size:5rem;color:var(--gold)">404</div>
+        <h2 class="h2 serif">没有找到这一页</h2>
+        <a class="back-btn" href="#/">← 返回首页</a>
+      </div>
+    </section>
+    ${footerHTML()}
+  </div>`;
+}
+
+let pendingScroll=null;
+function scrollToId(id){
+  const t=document.getElementById(id);
+  if(!t)return;
+  const y=t.getBoundingClientRect().top+scrollY-72;
+  scrollTo({top:y,behavior:'smooth'});
+}
+function render(){
+  let hash=location.hash.replace(/^#/,'')||'/';
+  let html;
+  if(hash==='/'||hash==='') html=homeView();
+  else if(hash.startsWith('/region/')) html=regionView(hash.split('/')[2]);
+  else if(hash.startsWith('/spot/')) html=spotView(hash.split('/')[2]);
+  else if(hash==='/arrival'||hash==='arrival') html=arrivalLanding();
+  else if(hash.startsWith('/arrival/')) html=articleView(hash.split('/')[2]);
+  else if(hash==='/safety'||hash==='safety') html=safetyLanding();
+  else if(hash.startsWith('/safety/')) html=articleView(hash.split('/')[2]);
+  else html=notFoundView();
+  $app.innerHTML=navHTML()+html;
+  bindCommon();
+  window.scrollTo(0,0);
+  observeReveals();
+  if(pendingScroll){
+    const target=pendingScroll;pendingScroll=null;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>scrollToId(target)));
+  }
+}
+
+const ANCHOR_PAGE = {
+  'from-uk':'/arrival','from-overseas':'/arrival','from-ireland':'/arrival','local-move':'/arrival','weather':'/arrival',
+  'safety-mountain':'/safety','safety-coast':'/safety','safety-emergency':'/safety'
+};
+document.addEventListener('click',function(e){
+  const a=e.target.closest('[data-scroll]');
+  if(!a)return;
+  e.preventDefault();
+  const id=a.getAttribute('data-scroll');
+  const nl=document.getElementById('navLinks');if(nl)nl.classList.remove('open');
+  if(document.getElementById(id)){ scrollToId(id); return; }
+  const page=ANCHOR_PAGE[id]||'/';
+  pendingScroll=id;
+  location.hash='#'+page;
+});
+
+function bindCommon(){
+  const nav=document.getElementById('nav');
+  const burger=document.getElementById('burger');
+  const navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+  window.addEventListener('scroll',function(){
+    if(scrollY>60)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
+    const t=document.getElementById('toTop');
+    if(scrollY>600)t.classList.add('show');else t.classList.remove('show');
+  },{passive:true});
+}
+document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+let io;
+function observeReveals(){
   if(io)io.disconnect();
   io=new IntersectionObserver(function(es){
     es.forEach(function(e){
-      if(e.isIntersecting)e.target.classList.add('in');
-      else e.target.classList.remove('in');
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll('[data-count]').forEach(function(el){
+          if(el.dataset.done)return;
+          el.dataset.done='1';
+          const target=+el.dataset.count,suffix=el.dataset.suffix||'';
+          const t0=performance.now();
+          (function tick(t){
+            const p=Math.min((t-t0)/1500,1);
+            el.textContent=Math.floor(target*p)+suffix;
+            if(p<1)requestAnimationFrame(tick);
+          })(t0);
+        });
+      }else{
+        e.target.classList.remove('in');
+        e.target.querySelectorAll('[data-count]').forEach(el=>{delete el.dataset.done});
+      }
     });
   },{threshold:.12});
-  document.querySelectorAll('.view.active .reveal').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 }
-go();
+
+window.addEventListener('hashchange',render);
+render();
+
+window.addEventListener('scroll',function(){
+  const inner=document.querySelector('.hero-inner');
+  if(!inner)return;
+  const y=scrollY;
+  if(y<innerHeight){
+    inner.style.transform='translateY('+(y*0.32)+'px)';
+    inner.style.opacity=Math.max(1-y/(innerHeight*0.65),0);
+    const hint=document.querySelector('.scroll-hint');
+    if(hint)hint.style.opacity=Math.max(1-y/300,0);
+  }
+},{passive:true});
 </script>
 </body>
 </html>
